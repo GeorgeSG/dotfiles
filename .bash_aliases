@@ -14,8 +14,6 @@ alias mountinfo="mount | column -t"
 alias meminfo="free -mlt"
 alias driveinfo="df -H"
 
-alias rumacly="cd ~/Dropbox/Git/rumacly"
-
 
 # Launchers
 
@@ -33,6 +31,14 @@ cdl() {
   ls -a;
 }
 
+function tabname {
+  printf "\e]1;$1\a"
+}
 
+function winname {
+  printf "\e]2;$1\a"
+}
 
+export PATH=${PATH}:~/Downloads/Apps/adt-bundle-mac-x86_64/sdk/tools
+export PATH=${PATH}:~/Downloads/Apps/adt-bundle-mac-x86_64/sdk/platform-tools
 
