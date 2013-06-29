@@ -96,6 +96,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'wincent/Command-T'
 Bundle 'SingleCompile'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'vim-ruby/vim-ruby'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
