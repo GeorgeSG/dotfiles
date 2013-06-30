@@ -7,6 +7,10 @@ set autoindent
 set smartindent
 set linespace=2
 
+" Code Folding
+set foldlevelstart=20
+set foldmethod=indent
+
 " Fix line numbers and tabs
 set number
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
@@ -70,7 +74,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"Opens a split and switches over (\v, \s)
+" Opens a split and switches over (\v, \s)
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
 
@@ -85,7 +89,7 @@ nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-S-t>   :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-S-t> <Esc>:tabnew<CR>
+inoremap <C-S-t>   <Esc>:tabnew<CR>
 
 " Bundles
 set rtp+=~/.vim/bundle/vundle/
