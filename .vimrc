@@ -80,6 +80,7 @@ inoremap <C-S-t> <Esc>:tabnew<CR>
 
 Bundle 'gmarik/vundle'
 Bundle 'The-NERD-tree'
+Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
@@ -99,6 +100,9 @@ Bundle 'Nibble'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
+
+" Tagbar
+map <F3> :TagbarToggle<CR>
 
 " SimpleCompile
 nmap <F8> :SCCompile<cr>
