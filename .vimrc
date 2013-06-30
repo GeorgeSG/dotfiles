@@ -53,6 +53,16 @@ set dir=~/.vim/swapdir
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 
+" Easily switch between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"Opens a split and switches over (\v)
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
+
 nnoremap <silent> <C-S> :<C-u>Update<CR>
 inoremap <c-s> <c-o>:Update<CR>
 imap <S-Tab> <Esc><<i
@@ -62,26 +72,9 @@ imap <S-Tab> <Esc><<i
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-S-t>   :tabnew<CR>
-nnoremap <C-S-w>   <Esc>:tabclose<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-S-t> <Esc>:tabnew<CR>
-inoremap <C-S-w> <Esc>:tabclose<CR>
-
-" Maximize the GVim window
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  set lines=999 columns=999
-else
-  " This is console Vim.
-  if exists("+lines")
-    set lines=50
-  endif
-  if exists("+columns")
-    set columns=100
-  endif
-endif
 
 " Bundles
 
@@ -92,11 +85,17 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'wincent/Command-T'
 Bundle 'SingleCompile'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kien/ctrlp.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'genutils'
+Bundle 'Nibble'
+
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
