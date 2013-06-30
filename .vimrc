@@ -1,15 +1,18 @@
+" General
 syntax on
-filetype off
+filetype on
 filetype plugin on
 set nocompatible
 set autoindent
+set smartindent
+set linespace=2
 
 " Fix line numbers and tabs
 set number
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-" Set colorscheme
-colorscheme jellybeans
+" Set colors
+colorscheme railscasts
 set t_Co=256
 set cursorline
 
@@ -17,6 +20,15 @@ set cursorline
 set showcmd
 set showmode
 set laststatus=2
+
+" Move lines up/down
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+
+" Automatically change current directory to that of the file in the buffer
+autocmd BufEnter * cd %:p:h
 
 " Disable gvim toolbars by default
 set guioptions-=T
