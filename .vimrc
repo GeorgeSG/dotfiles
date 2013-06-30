@@ -1,6 +1,8 @@
 syntax on
 filetype off
+filetype plugin on
 set nocompatible
+set autoindent
 
 " Fix line numbers and tabs
 set number
@@ -10,22 +12,28 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 colorscheme jellybeans
 set t_Co=256
 set cursorline
-filetype plugin on
 
 " Set the Command Line
 set showcmd
 set showmode
 set laststatus=2
 
+" Disable gvim toolbars by default
 set guioptions-=T
 set guioptions-=m>
 
+" Use Ctrl+F2 to toggle gui
+map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=m <Bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=m <Bar>
+    \endif<CR>
+
+
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
-set autoindent
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
 " Use CTRL+S to save file changes
 command -nargs=0 -bar Update if &modified
@@ -36,16 +44,7 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 
-" Use Ctrl+F2 to remove gui
-map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=m <Bar>
-    \else <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=m <Bar>
-    \endif<CR>
-
-" Undo dir
+" Undo and swap dirs
 set undodir=~/.vim/undodir
 set dir=~/.vim/swapdir
 
@@ -53,13 +52,13 @@ set dir=~/.vim/swapdir
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 
-" Easily switch between windows
+" Easily switch between split windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"Opens a split and switches over (\v)
+"Opens a split and switches over (\v, \s)
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
 
@@ -77,6 +76,8 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-S-t> <Esc>:tabnew<CR>
 
 " Bundles
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'The-NERD-tree'
