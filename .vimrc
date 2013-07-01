@@ -19,6 +19,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 colorscheme railscasts
 set t_Co=256
 set cursorline
+autocmd BufEnter * :syntax sync fromstart
 
 " Set the Command Line
 set showcmd
@@ -99,6 +100,8 @@ Bundle 'gmarik/vundle'
 Bundle 'The-NERD-tree'
 Bundle 'majutsushi/tagbar'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-endwise'
@@ -107,7 +110,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'SingleCompile'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
