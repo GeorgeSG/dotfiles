@@ -32,6 +32,10 @@ nnoremap <C-Up> :m .-2<CR>==
 vnoremap <C-Down> :m '>+1<CR>gv=gv
 vnoremap <C-Up> :m '<-2<CR>gv=gv
 
+" Ease visual shifting
+vnoremap > >gv
+vnoremap < <gv
+
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
 
