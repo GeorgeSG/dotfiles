@@ -75,6 +75,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Easily move split windows
+nnoremap <S-H> <C-w>H
+nnoremap <S-J> <C-w>J
+nnoremap <S-K> <C-w>K
+nnoremap <S-L> <C-w>L
+
 " Opens a split and switches over (\v, \s)
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
@@ -115,7 +121,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'genutils'
 Bundle 'Nibble'
-
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
