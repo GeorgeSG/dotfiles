@@ -16,7 +16,7 @@ set number
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Set colors
-colorscheme railscasts
+colorscheme Tomorrow
 set t_Co=256
 set cursorline
 autocmd BufEnter * :syntax sync fromstart
@@ -117,12 +117,14 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'SingleCompile'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'abijr/colorpicker'
 Bundle 'genutils'
 Bundle 'Nibble'
 
