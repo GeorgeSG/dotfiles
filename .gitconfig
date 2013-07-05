@@ -1,0 +1,32 @@
+# local user config, usernames, etc
+[include]
+    path=~/.gitconfig-local
+
+[core]
+	editor = vim
+[merge]
+	tool = meld
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[alias]
+    # Shorten some often used commands
+    c = commit
+    s = status
+    ds = diff --staged
+    amend = commit --amend -c HEAD
+    oops = reset --soft HEAD~1
+
+    # various pretty loggers from various places
+    l = log --pretty=oneline --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lc = log ORIG_HEAD.. --stat --no-merges
+    # from http://blog.kfish.org/2010/04/git-lola.html
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ll = log --graph --date=short
+[push]
+	default = simple
