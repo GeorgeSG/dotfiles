@@ -137,3 +137,10 @@ map <F3> :TagbarToggle<CR>
 " SimpleCompile
 nmap <F8> :SCCompile<cr>
 nmap <F9> :SCCompileRun<cr>
+
+" Multiple-Cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-S-k>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
