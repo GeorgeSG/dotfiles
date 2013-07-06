@@ -3,19 +3,15 @@ syntax on
 filetype on
 filetype plugin on
 set nocompatible
-set autoindent
-set smartindent
-set linespace=2
+set autoread
+
+" Start scrolling when we're 8 lines from the bottom
+set scrolloff=8
+
+" Set fonts
 set encoding=utf-8
 set guifont=Menlo\ for\ Powerline\ 10
-
-" Code Folding
-set foldlevelstart=20
-set foldmethod=indent
-
-" Fix line numbers and tabs
-set number
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set linespace=2
 
 " Set colors
 colorscheme Tomorrow
@@ -23,10 +19,23 @@ set t_Co=256
 set cursorline
 autocmd BufEnter * :syntax sync fromstart
 
+" Set line numbers, tabulations and indentations
+set number
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set autoindent
+set smartindent
+
 " Set the Command Line
 set showcmd
 set showmode
 set laststatus=2
+
+" Display trailing tabs and spaces
+set list listchars=tab:\ \ ,trail:·
+
+" Code Folding
+set foldlevelstart=20
+set foldmethod=indent
 
 " Move lines up/down
 nnoremap <C-Down> :m .+1<CR>==
