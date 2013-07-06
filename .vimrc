@@ -6,6 +6,8 @@ set nocompatible
 set autoindent
 set smartindent
 set linespace=2
+set encoding=utf-8
+set guifont=Menlo\ for\ Powerline\ 10
 
 " Code Folding
 set foldlevelstart=20
@@ -65,6 +67,9 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 
+nnoremap <silent> <C-S> :<C-u>Update<CR><ESC>
+inoremap <c-s> <c-o>:Update<CR><ESC>
+
 " Undo and swap dirs
 set undodir=~/.vim/undodir
 set dir=~/.vim/swapdir
@@ -89,8 +94,7 @@ nnoremap <S-L> <C-w>L
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>j
 
-nnoremap <silent> <C-S> :<C-u>Update<CR>
-inoremap <c-s> <c-o>:Update<CR>
+" Shift-Tab to go backwards in insert mode
 imap <S-Tab> <Esc><<i
 
 
@@ -126,6 +130,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'abijr/colorpicker'
+
+" The REALLY serious stuff :D
 Bundle 'genutils'
 Bundle 'Nibble'
 
@@ -134,6 +140,10 @@ map <F2> :NERDTreeToggle<CR>
 
 " Tagbar
 map <F3> :TagbarToggle<CR>
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
 
 " SimpleCompile
 nmap <F8> :SCCompile<cr>
