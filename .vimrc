@@ -14,7 +14,6 @@ set encoding=utf-8
 set guifont=Menlo\ for\ Powerline\ 10
 set linespace=2
 
-
 " Set colors
 colorscheme Tomorrow
 set t_Co=256
@@ -31,9 +30,6 @@ set smartindent
 set showcmd
 set showmode
 set laststatus=2
-
-" Display trailing tabs and spaces
-set list listchars=tab:\ \ ,trail:·
 
 " Code Folding
 set foldlevelstart=20
@@ -54,7 +50,7 @@ autocmd BufEnter * cd %:p:h
 
 " Disable gvim toolbars by default
 set guioptions-=T
-set guioptions-=m>
+set guioptions-=m
 
 " Use Ctrl+F2 to toggle gui
 map <silent> <C-F3> :if &guioptions =~# 'T' <Bar>
@@ -65,6 +61,8 @@ map <silent> <C-F3> :if &guioptions =~# 'T' <Bar>
         \set guioptions+=m <Bar>
     \endif<CR>
 
+" Display trailing tabs and spaces
+set list listchars=tab:\ \ ,trail:·
 
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -121,30 +119,30 @@ inoremap <C-S-t>   <Esc>:tabnew<CR>
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'The-NERD-tree'
-Bundle 'majutsushi/tagbar'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'godlygeek/tabular'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'SingleCompile'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'abijr/colorpicker'
-
-" The REALLY serious stuff :D
+" From vim-scripts
 Bundle 'genutils'
 Bundle 'Nibble'
+Bundle 'SingleCompile'
+Bundle 'The-NERD-tree'
+
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'abijr/colorpicker'
+Bundle 'kien/ctrlp.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-repeat'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'gmarik/vundle'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -155,7 +153,6 @@ map <F3> :TagbarToggle<CR>
 
 " Powerline
 let g:Powerline_symbols = 'fancy'
-
 
 " SimpleCompile
 nmap <F8> :SCCompile<cr>
