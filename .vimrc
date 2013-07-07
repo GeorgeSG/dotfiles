@@ -4,6 +4,7 @@ filetype on
 filetype plugin on
 set nocompatible
 set autoread
+set shortmess=atI
 
 " Start scrolling when we're 8 lines from the bottom
 set scrolloff=8
@@ -12,6 +13,7 @@ set scrolloff=8
 set encoding=utf-8
 set guifont=Menlo\ for\ Powerline\ 10
 set linespace=2
+
 
 " Set colors
 colorscheme Tomorrow
@@ -55,7 +57,7 @@ set guioptions-=T
 set guioptions-=m>
 
 " Use Ctrl+F2 to toggle gui
-map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
+map <silent> <C-F3> :if &guioptions =~# 'T' <Bar>
         \set guioptions-=T <Bar>
         \set guioptions-=m <Bar>
     \else <Bar>
@@ -146,6 +148,7 @@ Bundle 'Nibble'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
+map <C-F2> :NERDTree<CR>
 
 " Tagbar
 map <F3> :TagbarToggle<CR>
@@ -166,10 +169,8 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tabular
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 
