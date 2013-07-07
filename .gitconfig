@@ -1,11 +1,12 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
-
 [core]
-	editor = vim
+    editor = vim
 [merge]
-	tool = meld
+    tool = meld
+[diff]
+    tool = meld
 [color]
     diff = auto
     status = auto
@@ -15,7 +16,8 @@
 [alias]
     # Shorten some often used commands
     c = commit
-    s = status
+    ss = status
+    s = status -s
     ds = diff --staged
     amend = commit --amend -c HEAD
     oops = reset --soft HEAD~1
@@ -29,4 +31,4 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ll = log --graph --date=short
 [push]
-	default = simple
+    default = simple
