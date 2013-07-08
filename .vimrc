@@ -10,8 +10,11 @@ set shortmess=atI
 set scrolloff=8
 
 " Set fonts
-set encoding=utf-8
+let s:maxfontsize     = 25
+let s:minfontsize     = 6
+let s:regularfontsize = 10
 set guifont=Menlo\ for\ Powerline\ 10
+set encoding=utf-8
 set linespace=2
 
 " Set colors
@@ -106,7 +109,6 @@ nnoremap <leader>s <C-w>s<C-w>j
 " Shift-Tab to go backwards in insert mode
 imap <S-Tab> <Esc><<i
 
-
 " tab navigation
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -115,34 +117,80 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-S-t>   <Esc>:tabnew<CR>
 
+" increase/decrease/reset font size
+let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
+
+function! AdjustFontSize(amount)
+  if has("gui_gtk2") && has("gui_running")
+    if (a:amount == 0)
+      let fontname = substitute(&guifont, s:pattern, '\1', '')
+      let newfont = fontname . s:regularfontsize
+      let &guifont = newfont
+    else
+      let fontname = substitute(&guifont, s:pattern, '\1', '')
+      let cursize = substitute(&guifont, s:pattern, '\2', '')
+      let newsize = cursize + a:amount
+      if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
+        let newfont = fontname . newsize
+        let &guifont = newfont
+      endif
+    endif
+  else
+    echoerr "You need to run the GTK2 version of Vim to use this function."
+  endif
+endfunction
+
+function! LargerFont()
+  call AdjustFontSize(1)
+endfunction
+command! LargerFont call LargerFont()
+
+function! SmallerFont()
+  call AdjustFontSize(-1)
+endfunction
+command! SmallerFont call SmallerFont()
+
+function! DefaultFont()
+  call AdjustFontSize(0)
+endfunction
+command! ResetFont call DefaultFont()
+
+nnoremap <leader>+ :LargerFont<CR>
+nnoremap <leader>- :SmallerFont<CR>
+nnoremap <leader>0 :ResetFont<CR>
+
 " Bundles
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " From vim-scripts
+Bundle 'The-NERD-tree'
+Bundle 'SingleCompile'
 Bundle 'genutils'
 Bundle 'Nibble'
-Bundle 'SingleCompile'
-Bundle 'The-NERD-tree'
 
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'abijr/colorpicker'
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'abijr/colorpicker'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-repeat'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'gmarik/vundle'
+Bundle 'xolox/vim-notes'
+Bundle 'xolox/vim-misc'
+
+" Language Specific
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
