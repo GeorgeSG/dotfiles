@@ -122,12 +122,11 @@ let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
 
 function! AdjustFontSize(amount)
   if has("gui_gtk2") && has("gui_running")
+    let fontname = substitute(&guifont, s:pattern, '\1', '')
     if (a:amount == 0)
-      let fontname = substitute(&guifont, s:pattern, '\1', '')
       let newfont = fontname . s:regularfontsize
       let &guifont = newfont
     else
-      let fontname = substitute(&guifont, s:pattern, '\1', '')
       let cursize = substitute(&guifont, s:pattern, '\2', '')
       let newsize = cursize + a:amount
       if (newsize >= s:minfontsize) && (newsize <= s:maxfontsize)
