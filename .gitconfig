@@ -2,7 +2,7 @@
 [include]
     path=~/.gitconfig-local
 [core]
-    editor = vim
+	editor = gvim --nofork
 [merge]
     tool = meld
 [diff]
