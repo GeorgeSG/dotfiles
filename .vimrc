@@ -154,7 +154,7 @@ function! DefaultFont()
 endfunction
 command! ResetFont call DefaultFont()
 
-nnoremap <leader>+ :LargerFont<CR>
+nnoremap <leader>= :LargerFont<CR>
 nnoremap <leader>- :SmallerFont<CR>
 nnoremap <leader>0 :ResetFont<CR>
 
