@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/media/georgesg/Windows/xampp/htdocs/wp/wp-content/themes/sozopolvacations'
-let g:netrw_dirhist_2='/media/georgesg/Windows/xampp/htdocs/wp/wp-content/themes/sozopolvacations/img'
-let g:netrw_dirhist_3='/media/georgesg/Windows/xampp/htdocs/wp/wp-content/themes/sozopolvacations'
