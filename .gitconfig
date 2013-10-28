@@ -21,6 +21,7 @@
     ds = diff --staged
     amend = commit --amend -c HEAD
     oops = reset --soft HEAD~1
+    kris = pull --rebase
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
