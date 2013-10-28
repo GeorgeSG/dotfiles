@@ -36,11 +36,12 @@ alias og="cd ~/Dropbox/Git"
 alias showtracker="cd ~/Dropbox/Git/showtracker"
 
 # Monitor
-
 alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
 alias monitor_disable="xrandr --output CRT1 --off"
 
 # Lampp
-
 alias lstart="sudo /opt/lampp/lampp start"
 alias lstop="sudo /opt/lampp/lampp stop"
+
+# FMI Ruby course
+alias fmirspec="rspec sample_spec.rb --require ./solution.rb --colour --format documentation"
