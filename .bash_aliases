@@ -26,6 +26,9 @@ alias gs="git status -s"
 alias gss="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gcm="git checkout master"
+alias gpom="git pull origin master"
+alias gbd="git branch -D"
 
 # Editing files
 alias aliases="gvim ~/.bash_aliases"
@@ -33,9 +36,8 @@ alias vimrc="gvim ~/.vimrc"
 
 # CD-ing to some commonly used folders
 alias og="cd ~/Dropbox/Git"
-alias showtracker="cd ~/Dropbox/Git/showtracker"
 
-# Monitor
+# Secondary Monitor
 alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
 alias monitor_disable="xrandr --output CRT1 --off"
 
