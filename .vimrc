@@ -51,6 +51,11 @@ vnoremap < <gv
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
 
+" Search the word under the cursor recursively in the entire working
+" directory, and show all files that contain it
+map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+
 " Disable gvim toolbars by default
 set guioptions-=T
 set guioptions-=m
@@ -162,7 +167,9 @@ autocmd FileType html set shiftwidth=2
 autocmd FIleType html set tabstop=2
 
 
-" Bundles
+" -------------------------------------------
+" ------------------ Bundles ----------------
+" -------------------------------------------
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -217,12 +224,13 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
+map <Leader>a= :Tabularize /=<CR>
+map <Leader>a: :Tabularize /:\zs<CR>
 
 
+" -------------------------------------------
+" ------------- Cyrillic Maps ---------------
+" -------------------------------------------
 map гх gh
 map гй gj
 map гк gk
@@ -258,6 +266,7 @@ map х h
 map й j
 map к k
 map л l
+map ю \
 
 map з z
 map ь x
@@ -290,11 +299,15 @@ map Х H
 map Й J
 map К K
 map Л L
+map Ю |
 
 map З Z
 map Ь X
+map ѝ X
 map Ц C
 map Ж V
 map Б B
 map Н N
 map М M
+map „ <
+map “ >
