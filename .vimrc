@@ -17,6 +17,11 @@ set guifont=Menlo\ for\ Powerline\ 10
 set encoding=utf-8
 set linespace=2
 
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
+
 " Set colors
 colorscheme Tomorrow
 set t_Co=256
@@ -29,6 +34,8 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
 set smartindent
 
+set colorcolumn=80
+
 " Set the Command Line
 set showcmd
 set showmode
@@ -37,6 +44,20 @@ set laststatus=2
 " Code Folding
 set foldlevelstart=20
 set foldmethod=indent
+
+" Edit my vimrc file
+nnoremap <Leader>ev :vsplit $MYVIMRC<cr>
+
+" Source my vimrc file
+nnoremap <Leader>sv :source $MYVIMRC<cr>
+
+set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+
+" Disable some keys
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
 
 " Move lines up/down
 nnoremap <C-Down> :m .+1<CR>==
@@ -47,6 +68,11 @@ vnoremap <C-Up> :m '<-2<CR>gv=gv
 " Ease visual shifting
 vnoremap > >gv
 vnoremap < <gv
+
+" Ease copy-paste
+nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+
 
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
@@ -60,14 +86,14 @@ map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 set guioptions-=T
 set guioptions-=m
 
-" Use Ctrl+F2 to toggle gui
-map <silent> <C-F3> :if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=m <Bar>
-    \else <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=m <Bar>
-    \endif<CR>
+" Use Ctrl+F3 to toggle gui
+" map <silent> <C-F3> :if &guioptions =~# 'T' <Bar>
+"         \set guioptions-=T <Bar>
+"         \set guioptions-=m <Bar>
+"     \else <Bar>
+"         \set guioptions+=T <Bar>
+"         \set guioptions+=m <Bar>
+"     \endif<CR>
 
 " Display trailing tabs and spaces
 set list listchars=tab:\ \ ,trail:·
@@ -87,10 +113,6 @@ command -nargs=0 -bar Update if &modified
 nnoremap <silent> <C-S> :<C-u>Update<CR><ESC>
 inoremap <c-s> <c-o>:Update<CR><ESC>
 
-" Undo and swap dirs
-set undodir=~/.vim/undodir
-set dir=~/.vim/swapdir
-
 " Disable netrw
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
@@ -102,10 +124,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Easily move split windows
-nnoremap <S-H> <C-w>H
-nnoremap <S-J> <C-w>J
-nnoremap <S-K> <C-w>K
-nnoremap <S-L> <C-w>L
+" nnoremap <S-H> <C-w>H
+" nnoremap <S-J> <C-w>J
+" nnoremap <S-K> <C-w>K
+" nnoremap <S-L> <C-w>L
 
 " Opens a split and switches over (\v, \s)
 nnoremap <leader>v <C-w>v<C-w>l
@@ -166,7 +188,6 @@ nnoremap <leader>0 :ResetFont<CR>
 autocmd FileType html set shiftwidth=2
 autocmd FIleType html set tabstop=2
 
-
 " -------------------------------------------
 " ------------------ Bundles ----------------
 " -------------------------------------------
@@ -226,88 +247,3 @@ let g:multi_cursor_quit_key='<Esc>'
 " Tabular
 map <Leader>a= :Tabularize /=<CR>
 map <Leader>a: :Tabularize /:\zs<CR>
-
-
-" -------------------------------------------
-" ------------- Cyrillic Maps ---------------
-" -------------------------------------------
-map гх gh
-map гй gj
-map гк gk
-map гл gl
-
-map зг zg
-map зо zo
-map зЦ zC
-map зР zR
-map зМ zM
-map яя qq
-
-map ч `
-map я q
-map в w
-map е e
-map р r
-map т t
-map ъ y
-map у u
-map и i
-map о o
-map п p
-map ш [
-map щ ]
-
-map а a
-map с s
-map д d
-map ф f
-map г g
-map х h
-map й j
-map к k
-map л l
-map ю \
-
-map з z
-map ь x
-map ц c
-map ж v
-map б b
-map н n
-map м m
-
-map Ч ~
-map Я Q
-map В W
-map Е E
-map Р R
-map Т T
-map Ъ Y
-map У U
-map И I
-map О O
-map П P
-map Ш {
-map Щ }
-
-map А A
-map С S
-map Д D
-map Ф F
-map Г G
-map Х H
-map Й J
-map К K
-map Л L
-map Ю |
-
-map З Z
-map Ь X
-map ѝ X
-map Ц C
-map Ж V
-map Б B
-map Н N
-map М M
-map „ <
-map “ >
