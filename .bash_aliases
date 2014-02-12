@@ -14,10 +14,9 @@ alias meminfo="free -mlt"
 alias driveinfo="df -h"
 
 # Launchers
-alias sass_watch="sass  --watch ./:./"
+alias sass_watch="sass --watch ./:./"
 alias s="sublime"
 alias minecraft='padsp java -Xmx2048M -Xms1024M -cp ~/Minecraft/minecraft.jar net.minecraft.LauncherFrame'
-alias m="clear; cmatrix -bs"
 
 # Git Aliases
 alias ga="git add"
@@ -26,6 +25,7 @@ alias gs="git status -s"
 alias gss="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
+alais gco="git checkout"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 alias gbd="git branch -D"
@@ -35,7 +35,7 @@ alias aliases="gvim ~/.bash_aliases"
 alias vimrc="gvim ~/.vimrc"
 
 # CD-ing to some commonly used folders
-alias og="cd ~/Dropbox/Git"
+alias og="cd ~/Git"
 
 # Secondary Monitor
 alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
