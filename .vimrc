@@ -191,37 +191,39 @@ autocmd FIleType html set tabstop=2
 " -------------------------------------------
 " ------------------ Bundles ----------------
 " -------------------------------------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " From vim-scripts
-Bundle 'The-NERD-tree'
-Bundle 'SingleCompile'
-Bundle 'genutils'
-Bundle 'Nibble'
+Plugin 'The-NERD-tree'
+Plugin 'SingleCompile'
+Plugin 'genutils'
+Plugin 'Nibble'
 
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'kien/ctrlp.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'abijr/colorpicker'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-surround'
-Bundle 'xolox/vim-notes'
-Bundle 'xolox/vim-misc'
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+" PLugin 'Lokaltog/vim-
+'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'abijr/colorpicker'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
 
 " Language Specific
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 " Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -231,7 +233,11 @@ map <C-F2> :NERDTree<CR>
 map <F3> :TagbarToggle<CR>
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " SimpleCompile
 nmap <F8> :SCCompile<cr>
