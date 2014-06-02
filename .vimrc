@@ -18,9 +18,13 @@ set encoding=utf-8
 set linespace=2
 
 " Turn backup off
-set nobackup
-set nowb
-set noswapfile
+" set nobackup
+" set nowb
+" set noswapfile
+
+" Undo dir
+set undodir=~/.vim/undodir
+set dir=~/.vim/swapdir
 
 " Set colors
 colorscheme Tomorrow
@@ -192,7 +196,7 @@ autocmd FIleType html set tabstop=2
 " ------------------ Bundles ----------------
 " -------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#rc()
 
 " From vim-scripts
 Plugin 'The-NERD-tree'
