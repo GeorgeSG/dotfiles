@@ -211,6 +211,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
+Plugin 'airblade/vim-gitgutter'
 
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'
@@ -245,3 +246,6 @@ let g:multi_cursor_quit_key='<Esc>'
 " Tabular
 map <Leader>a= :Tabularize /=<CR>
 map <Leader>a: :Tabularize /:\zs<CR>
+
+" GitGutter
+let g:gitgutter_sign_column_always = 1
