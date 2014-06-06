@@ -66,6 +66,7 @@ inoremap <Down> <Nop>
 " Buffer Management
 nnoremap <Leader>j :bp<CR>
 nnoremap <Leader>k :bn<CR>
+nnoremap <Leader>d :bd<CR>
 
 " Move lines up/down
 nnoremap <C-Down> :m .+1<CR>==
