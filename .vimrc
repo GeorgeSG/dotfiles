@@ -63,6 +63,10 @@ inoremap <Right> <Nop>
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 
+" Buffer Management
+nnoremap <Leader>j :bp<CR>
+nnoremap <Leader>k :bn<CR>
+
 " Move lines up/down
 nnoremap <C-Down> :m .+1<CR>==
 nnoremap <C-Up> :m .-2<CR>==
@@ -77,14 +81,12 @@ vnoremap < <gv
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
 
-
 " Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
 
 " Search the word under the cursor recursively in the entire working
 " directory, and show all files that contain it
 map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
 
 " Disable gvim toolbars by default
 set guioptions-=T
