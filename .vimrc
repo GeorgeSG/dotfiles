@@ -87,7 +87,7 @@ autocmd BufEnter * cd %:p:h
 
 " Search the word under the cursor recursively in the entire working
 " directory, and show all files that contain it
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+map <F3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 " Disable gvim toolbars by default
 set guioptions-=T
@@ -194,11 +194,17 @@ Plugin 'The-NERD-tree'
 Plugin 'SingleCompile'
 Plugin 'genutils'
 Plugin 'Nibble'
+Plugin 'YankRing.vim'
+Plugin 'ZoomWin'
 
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 " PLugin 'Lokaltog/vim-
 '
+
+Plugin 'brysgo/quickfixfix'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
@@ -206,9 +212,11 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'abijr/colorpicker'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
@@ -226,7 +234,7 @@ map <F2> :NERDTreeToggle<CR>
 map <C-F2> :NERDTree<CR>
 
 " Tagbar
-map <F3> :TagbarToggle<CR>
+map <F4> :TagbarToggle<CR>
 
 " Powerline
 " let g:Powerline_symbols = 'fancy'
@@ -252,3 +260,7 @@ map <Leader>a: :Tabularize /:\zs<CR>
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
+
+" YankRing
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_replace_n_pkey = '<C-M>'
