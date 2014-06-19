@@ -194,7 +194,7 @@ Plugin 'The-NERD-tree'
 Plugin 'SingleCompile'
 Plugin 'genutils'
 Plugin 'Nibble'
-Plugin 'YankRing.vim'
+" Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 
 Plugin 'gmarik/vundle'
@@ -223,6 +223,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'rking/ag.vim'
 
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'
@@ -262,5 +263,5 @@ map <Leader>a: :Tabularize /:\zs<CR>
 let g:gitgutter_sign_column_always = 1
 
 " YankRing
-nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_replace_n_pkey = '<C-M>'
+" nnoremap <silent> <F11> :YRShow<CR>
+" let g:yankring_replace_n_pkey = '<C-M>'
