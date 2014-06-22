@@ -20,6 +20,7 @@ alias minecraft='padsp java -Xmx2048M -Xms1024M -cp ~/Minecraft/minecraft.jar ne
 
 # Git Aliases
 alias ga="git add"
+alias gr="git rm"
 alias gc="git commit"
 alias gs="git status -s"
 alias gss="git status"
