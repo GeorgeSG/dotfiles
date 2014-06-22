@@ -16,6 +16,7 @@
 [alias]
     # Shorten some often used commands
     c = commit
+    co = checkout
     ss = status
     s = status -s
     ds = diff --staged
