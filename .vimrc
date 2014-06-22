@@ -83,7 +83,7 @@ nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
 
 " Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
+" autocmd BufEnter * cd %:p:h
 
 " Search the word under the cursor recursively in the entire working
 " directory, and show all files that contain it
@@ -180,8 +180,8 @@ nnoremap <leader>= :LargerFont<CR>
 nnoremap <leader>- :SmallerFont<CR>
 nnoremap <leader>0 :ResetFont<CR>
 
-autocmd FileType html set shiftwidth=2
-autocmd FIleType html set tabstop=2
+" autocmd FileType html set shiftwidth=2
+" autocmd FIleType html set tabstop=2
 
 " -------------------------------------------
 " ------------------ Bundles ----------------
@@ -194,14 +194,10 @@ Plugin 'The-NERD-tree'
 Plugin 'SingleCompile'
 Plugin 'genutils'
 Plugin 'Nibble'
-" Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
-" PLugin 'Lokaltog/vim-
-'
-
 Plugin 'brysgo/quickfixfix'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
@@ -216,7 +212,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
@@ -224,11 +219,15 @@ Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
+Plugin 'chriskempson/base16-vim'
+" Plugin 'szw/vim-ctrlspace'
 
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'
-" Bundle 'pangloss/vim-javascript'
+Plugin 'tpope/vim-rails'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'JulesWang/css.vim'
+
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -261,7 +260,4 @@ map <Leader>a: :Tabularize /:\zs<CR>
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
-
-" YankRing
-" nnoremap <silent> <F11> :YRShow<CR>
-" let g:yankring_replace_n_pkey = '<C-M>'
+let g:airline#extensions#tabline#fnamemod = ':t'
