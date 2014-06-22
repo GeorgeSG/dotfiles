@@ -30,10 +30,11 @@ alias gco="git checkout"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 alias gbd="git branch -D"
+alais gm="git mergetool"
 
 # Editing files
-alias aliases="gvim ~/.bash_aliases"
-alias vimrc="gvim ~/.vimrc"
+alias aliases="vim ~/.bash_aliases"
+alias vimrc="vim ~/.vimrc"
 
 # CD-ing to some commonly used folders
 alias og="cd ~/Git"
