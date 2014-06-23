@@ -66,7 +66,7 @@ inoremap <Down> <Nop>
 " Buffer Management
 nnoremap <Leader>j :bp<CR>
 nnoremap <Leader>k :bn<CR>
-nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>d :NERDTreeClose<CR>:bd<CR>:NERDTreeToggle<CR><C-w>l
 
 " Move lines up/down
 nnoremap <C-Down> :m .+1<CR>==
@@ -217,6 +217,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
+Plugin 'tpope/vim-rake'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
 Plugin 'chriskempson/base16-vim'
@@ -224,6 +225,7 @@ Plugin 'chriskempson/base16-vim'
 
 " Language Specific
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-rails'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'JulesWang/css.vim'
@@ -232,6 +234,7 @@ Plugin 'JulesWang/css.vim'
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
 map <C-F2> :NERDTree<CR>
+let NERDTreeChDirMode=2
 
 " Tagbar
 map <F4> :TagbarToggle<CR>
