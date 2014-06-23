@@ -1,5 +1,11 @@
+if [ -f ~/.bash_local_aliases ]; then
+    . ~/.bash_local_aliases
+fi
+
 alias grep="grep --color=auto"
 alias c="clear"
+
+alias be="bundle exec"
 
 # Easier APT
 alias install="sudo apt-get install"
@@ -30,7 +36,7 @@ alias gco="git checkout"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 alias gbd="git branch -D"
-alais gm="git mergetool"
+alias gm="git mergetool"
 
 # Editing files
 alias aliases="vim ~/.bash_aliases"
