@@ -1,6 +1,8 @@
 # Include my bash aliases
 source ~/.bash_aliases
 
+source ~/.zsh/git-prompt/zshrc.sh
+
 bindkey -v
 
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
@@ -39,32 +41,23 @@ DIRSTACKSIZE=15
 # Enable colors in prompt
 autoload -U colors && colors
 
-GIT_PROMPT_SYMBOL="%{$fg[white]%}"
-GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}(" #"%{$fg[green]%}[%{$reset_color%}"
-GIT_PROMPT_SUFFIX=')' #"%{$fg[green]%}]%{$reset_color%}"
 
-parse_git_branch() {
-  (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
-}
+# Git Prompt colors
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[cyan]%}("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[cyan]%})"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="%{$fg_bold[cyan]%}|"
+ZSH_THEME_GIT_PROMPT_BRANCH=""
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg_bold[red]%}✖"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg_bold[red]%}✚"
+ZSH_THEME_GIT_PROMPT_REMOTE=""
+ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[cyan]%}✔"
 
-git_prompt_string() {
-    local git_where="$(parse_git_branch)"
-    if [ -n "$git_where" ]; then
-        echo " $GIT_PROMPT_PREFIX${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX$GIT_PROMPT_SYMBOL%{$fg[white]%}"
-    else
-        echo "%B"
-    fi
-}
 
-PROMPT='%B%F{green}%~%b%F{white}$(git_prompt_string): '
+
+PROMPT='%B%F{green}%~%b%F{white}$(git_super_status)%{$fg_bold[white]%}: '
 RPROMPT='${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1'
-
-zle-keymap-select () {
-  case $KEYMAP in
-    vicmd) print -rn -- $terminfo[cvvis];; # block cursor
-    viins|main) print -rn -- $terminfo[cnorm];; # less visible cursor
-  esac
-}
 
 export KEYTIMEOUT=1
 
