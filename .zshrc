@@ -1,6 +1,8 @@
 # Include my bash aliases
 source ~/.bash_aliases
 
+bindkey -v
+
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
@@ -37,7 +39,7 @@ DIRSTACKSIZE=15
 # Enable colors in prompt
 autoload -U colors && colors
 
-GIT_PROMPT_SYMBOL="%{$fg[white]%}:"
+GIT_PROMPT_SYMBOL="%{$fg[white]%}"
 GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}(" #"%{$fg[green]%}[%{$reset_color%}"
 GIT_PROMPT_SUFFIX=')' #"%{$fg[green]%}]%{$reset_color%}"
 
@@ -50,12 +52,21 @@ git_prompt_string() {
     if [ -n "$git_where" ]; then
         echo " $GIT_PROMPT_PREFIX${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX$GIT_PROMPT_SYMBOL%{$fg[white]%}"
     else
-        echo "%B:"
+        echo "%B"
     fi
 }
 
-PROMPT='%B%F{green}%~%b%F{white}$(git_prompt_string) '
-RPROMPT='%w, %t'
+PROMPT='%B%F{green}%~%b%F{white}$(git_prompt_string): '
+RPROMPT='${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1'
+
+zle-keymap-select () {
+  case $KEYMAP in
+    vicmd) print -rn -- $terminfo[cvvis];; # block cursor
+    viins|main) print -rn -- $terminfo[cnorm];; # less visible cursor
+  esac
+}
+
+export KEYTIMEOUT=1
 
 # Arrow-driven completion
 zstyle ':completion:*' menu select
