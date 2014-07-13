@@ -37,11 +37,6 @@ m:0x0 + b:15
 "amixer -D pulse set Master 1+ toggle"
 m:0x0 + b:17
 
-
-# undo closed tab
-"amixer -D pulse set Master 1+ toggle"
- m:0x0 + b:16
-
 # mouse wheel left middle click
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 b:6
