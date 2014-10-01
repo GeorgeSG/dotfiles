@@ -38,6 +38,9 @@ alias gpom="git pull origin master"
 alias gbd="git branch -D"
 alias gm="git mergetool"
 
+# Because for unknown reasons this breaks tmux :@
+alias copy="tmux save-buffer - | xclip -i -sel clipboard"
+
 # Editing files
 alias aliases="vim ~/.bash_aliases"
 alias vimrc="vim ~/.vimrc"
