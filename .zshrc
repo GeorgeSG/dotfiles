@@ -5,6 +5,9 @@ source ~/.zsh/git-prompt/zshrc.sh
 
 bindkey -v
 
+bindkey '^r' history-incremental-search-backward
+bindkey '^R' history-incremental-pattern-search-backward
+#
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
