@@ -39,6 +39,9 @@ setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PROMPT_SUBST
 
+# Allow [ or ] whereever you want
+unsetopt nomatch
+
 DIRSTACKSIZE=15
 
 # Enable colors in prompt
