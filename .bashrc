@@ -11,6 +11,7 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+shopt -s autocd
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -137,19 +138,19 @@ NewLine="\n"
 Jobs="\j"
 
 if [ "$color_prompt" = yes ]; then
-    PS1=$Time12h$Color_Off'$(git branch &>/dev/null;\
+    PS1='$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo " '$BGreen$PathShort$BCyan'"$(__git_ps1 " (%s)"); \
+    echo "'$BGreen$PathShort$BCyan'"$(__git_ps1 " (%s)"); \
   else \
     # @5 - Changes to working tree
-    echo " '$BGreen$PathShort$IRed'"$(__git_ps1 " (%s)"); \
-  fi) '$BWhite'\$:'$Color_Off' "; \
+    echo "'$BGreen$PathShort$IRed'"$(__git_ps1 " (%s)"); \
+  fi)'$BWhite':'$Color_Off' "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$BGreen$PathShort$BWhite' \$:'$Color_Off' "; \
+  echo "'$BGreen$PathShort$BWhite':'$Color_Off' "; \
 fi)'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
