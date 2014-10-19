@@ -20,6 +20,10 @@ alias meminfo="free -mlt"
 alias driveinfo="df -h"
 
 # Launchers
+alias lstart="sudo /opt/lampp/lampp start"
+alias lstop="sudo /opt/lampp/lampp stop"
+alias pgstart="sudo service postgresql start"
+alias pgstop="sudo service postgresql stop"
 alias sass_watch="sass --watch ./:./"
 alias s="sublime"
 alias minecraft='padsp java -Xmx2048M -Xms1024M -cp ~/Minecraft/minecraft.jar net.minecraft.LauncherFrame'
@@ -51,10 +55,3 @@ alias og="cd ~/Git"
 # Secondary Monitor
 alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
 alias monitor_disable="xrandr --output CRT1 --off"
-
-# Lampp
-alias lstart="sudo /opt/lampp/lampp start"
-alias lstop="sudo /opt/lampp/lampp stop"
-
-# FMI Ruby course
-alias fmirspec="rspec sample_spec.rb --require ./solution.rb --colour --format documentation"
