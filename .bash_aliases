@@ -29,6 +29,12 @@ alias s="sublime"
 alias minecraft='padsp java -Xmx2048M -Xms1024M -cp ~/Minecraft/minecraft.jar net.minecraft.LauncherFrame'
 
 # Git Aliases
+alias g="git"
+alias much="git"
+alias such="git"
+alias very="git"
+alias so="git"
+
 alias ga="git add"
 alias gr="git rm"
 alias gc="git commit"

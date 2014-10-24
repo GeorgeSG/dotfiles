@@ -26,6 +26,7 @@
     ignore = !git update-index --assume-unchanged
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
+    undo = reset --soft HEAD^
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
