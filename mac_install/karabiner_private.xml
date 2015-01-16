@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+		<name>Use PC Style "Change Input Source" Georgi</name>
+		<appendix>Flip between input modes</appendix>
+		<appendix>(Option_L+Shift_L to Command+Space)</appendix>
+		<appendix>If you want to use Option_L+Shift_L as modifier, press Shift_L first. (then press Option_L.)</appendix>
+		<identifier>remap.pcstyle_changeinputmethod1georgi</identifier>
+		<autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::COMMAND_L, KeyCode::SLASH, ModifierFlag::COMMAND_L</autogen>
+	</item>
+	<item>
+		<name>Replace ± with ~ Georgi</name>
+		<appendix>Fix keys</appendix>
+		<identifier>remap.pcstyle_changetildebacktick</identifier>
+		<autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+	</item>
+</root>
