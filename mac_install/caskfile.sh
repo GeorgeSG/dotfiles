@@ -24,5 +24,6 @@ brew cask install magicprefs
 brew cask install dropbox
 brew cask install vlc
 
-# brew cask install divvy
+brew cask install divvy
+brew cask install seil
 # brew cask install postbox
