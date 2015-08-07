@@ -7,6 +7,8 @@ alias c="clear"
 
 alias be="bundle exec"
 
+alias share="python -m SimpleHTTPServer"
+
 # Easier APT
 alias install="sudo apt-get install"
 alias purge="sudo apt-get purge"
@@ -47,9 +49,6 @@ alias gcm="git checkout master"
 alias gpom="git pull origin master"
 alias gbd="git branch -D"
 alias gm="git mergetool"
-
-# Because for unknown reasons this breaks tmux :@
-alias copy="tmux save-buffer - | xclip -i -sel clipboard"
 
 # Editing files
 alias aliases="vim ~/.bash_aliases"
