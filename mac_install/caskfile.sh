@@ -27,4 +27,6 @@ brew cask install vlc
 brew cask install divvy
 brew cask install seil
 brew cask install quicklook-csv
-# brew cask install postbox
+brew cask install lastpass
+brew cask install sourcetree
+brew cask install postbox
