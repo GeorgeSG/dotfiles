@@ -30,3 +30,8 @@ brew cask install quicklook-csv
 brew cask install lastpass
 brew cask install sourcetree
 brew cask install postbox
+
+
+brew cask install transmission
+brew cask install plex-home-theater
+brew cask install teamviewer
