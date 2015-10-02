@@ -36,4 +36,4 @@ brew cask install plex-home-theater
 brew cask install teamviewer
 
 brew cask install telegram
-
+brew cask install itsycal
