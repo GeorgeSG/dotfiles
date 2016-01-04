@@ -1,7 +1,3 @@
-if [ -f ~/.bash_local_aliases ]; then
-    . ~/.bash_local_aliases
-fi
-
 alias grep="grep --color=auto"
 alias c="clear"
 
@@ -69,3 +65,7 @@ alias og="cd ~/Git"
 # Secondary Monitor
 alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
 alias monitor_disable="xrandr --output CRT1 --off"
+
+if [ -f ~/.bash_local_aliases ]; then
+    . ~/.bash_local_aliases
+fi
