@@ -1,13 +1,5 @@
-# local user config, usernames, etc
-[include]
-    path=~/.gitconfig-local
 [core]
-	editor = gvim --nofork
-	excludesfile = /Users/georgi/.gitignore_global
-[merge]
-    tool = kdiff3
-[diff]
-    tool = kdiff3
+    editor = gvim --nofork
 [color]
     diff = auto
     status = auto
@@ -43,9 +35,7 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 	required = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+# local user config, usernames, etc
+[include]
+    path=~/.gitconfig-local
