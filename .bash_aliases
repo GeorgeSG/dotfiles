@@ -19,6 +19,8 @@ alias gpom="git pull origin master"
 alias gbd="git branch -D"
 alias gm="git mergetool"
 
+alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
+
 # Editing files
 alias aliases="vim ~/.bash_aliases"
 alias vimrc="vim ~/.vimrc"
