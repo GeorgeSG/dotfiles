@@ -6,7 +6,7 @@
 		<appendix>(Option_L+Shift_L to Command+Space)</appendix>
 		<appendix>If you want to use Option_L+Shift_L as modifier, press Shift_L first. (then press Option_L.)</appendix>
 		<identifier>remap.pcstyle_changeinputmethod1georgi</identifier>
-		<autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::COMMAND_L, KeyCode::SLASH, ModifierFlag::COMMAND_L</autogen>
+		<autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::COMMAND_L, KeyCode::SLASH, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L</autogen>
 	</item>
 	<item>
 		<name>Replace ± with ~ Georgi</name>
