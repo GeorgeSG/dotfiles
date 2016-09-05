@@ -20,7 +20,7 @@ alias gbd="git branch -D"
 alias gm="git mergetool"
 
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
-
+alias evaldocker="eval \"$(docker-machine env default)\""
 # Editing files
 alias aliases="vim ~/.bash_aliases"
 alias vimrc="vim ~/.vimrc"
@@ -29,7 +29,6 @@ alias vimrc="vim ~/.vimrc"
 alias og="cd ~/Git"
 
 alias sass_watch="sass --watch ./:./"
-alias s="sublime"
 alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
@@ -38,32 +37,7 @@ alias share="python -m SimpleHTTPServer"
 ##### Mac OS Specific #####
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
-
 alias cask="brew cask"
-
-##### Ubuntu/Linux Specific #####
-# Easier APT
-alias install="sudo apt-get install"
-alias purge="sudo apt-get purge"
-alias search="sudo apt-cache search"
-alias remove="sudo apt-get remove"
-alias autoremove="sudo apt-get autoremove"
-
-# Secondary Monitor
-alias monitor_enable="xrandr --output CRT1 --auto --right-of LVDS"
-alias monitor_disable="xrandr --output CRT1 --off"
-
-# PC Info
-alias mountinfo="mount | column -t"
-alias meminfo="free -mlt"
-alias driveinfo="df -h"
-
-# Launchers
-alias lstart="sudo /opt/lampp/lampp start"
-alias lstop="sudo /opt/lampp/lampp stop"
-alias pgstart="sudo service postgresql start"
-alias pgstop="sudo service postgresql stop"
-
 
 if [ -f ~/.bash_local_aliases ]; then
     . ~/.bash_local_aliases
