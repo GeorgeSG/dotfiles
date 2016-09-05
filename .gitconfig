@@ -1,5 +1,4 @@
-[core]
-    editor = gvim --nofork
+
 [color]
     diff = auto
     status = auto
@@ -8,8 +7,10 @@
     ui = auto
 [alias]
     # Shorten some often used commands
+    b = branch
     c = commit
     co = checkout
+    com = checkout master
     ss = status
     s = status -s
     ds = diff --staged
@@ -20,6 +21,7 @@
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     undo = reset --soft HEAD^
+    squash = rebase -i
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
