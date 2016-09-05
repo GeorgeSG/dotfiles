@@ -1,19 +1,57 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"bold_folder_labels": true,
 	"ensure_newline_at_eof_on_save": true,
-	"fallback_encoding": "Cyrillic (Windows 1251)",
-	"font_size": 10.0,
+	"file_exclude_patterns":
+	[
+		"*.map",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace",
+		"*ng-all.min.js",
+		"*lpall.js",
+		"*.min.js"
+	],
+	"folder_exclude_patterns":
+	[
+		"generated/",
+		"*landing*",
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
+	"font_face": "Monaco",
+	"font_size": 13,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
 	"rulers":
 	[
-		80
+		100
 	],
-	"scroll_speed": 0,
+	"scroll_past_end": true,
+	"shift_tab_unindent": true,
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"trim_trailing_white_space_on_save": true
 }
