@@ -14,7 +14,6 @@ stty -ixon
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -24,10 +23,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ls='ls -G --color=auto'
-alias ll='ls -alFG --color=auto'
-alias la='ls -AG --color=auto'
-alias l='ls -CFG --color=auto'
+alias ls='ls -G'
+alias ll='ls -alFG'
+alias la='ls -AG'
+alias l='ls -CFG'
 
 
 autoload -U compinit promptinit
