@@ -11,6 +11,9 @@ shopt -s checkwinsize
 # Disable Caret-C output
 stty -ctlecho
 
+set -o vi
+bind -m vi-insert "\C-l":clear-screen
+
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
