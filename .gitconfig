@@ -21,7 +21,8 @@
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
     undo = reset --soft HEAD^
-    squash = rebase -i
+    squash = rebase --autostash -i
+    megasquash = "!f() { git rebase --autostash -i `git merge-base --fork-point HEAD master`; }; f"
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
