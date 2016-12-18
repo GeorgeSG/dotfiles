@@ -46,7 +46,7 @@ esac
 force_color_prompt=yes
 
 # Colors
-PS1='\[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[m\] \[\e[1;37m\]'
+PS1='\[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] λ\[\e[m\] \[\e[1;37m\]'
 export TERM=xterm-256color
 
 shopt -s autocd
@@ -85,7 +85,7 @@ fi
 
 GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_START="\[\e[1;32m\]\w\[\e[m\]"
-GIT_PROMPT_END="\[\e[1;37m\]  \[\e[1;37m\]"
+GIT_PROMPT_END="\[\e[1;37m\] λ \[\e[1;37m\]"
 GIT_PROMPT_THEME=Georgi
 
 ######################
