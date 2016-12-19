@@ -24,6 +24,7 @@
 	"theme_quick_panel_item_selected_colored": true,
 	"theme_sidebar_border": true,
 	"theme_sidebar_disclosure": true,
+	"theme_sidebar_font_lg": true,
 	"theme_sidebar_indent_md": true,
 	"theme_sidebar_indent_top_level_disabled": true,
 	"theme_statusbar_colored": true,
