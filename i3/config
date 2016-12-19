@@ -25,7 +25,7 @@ font pango:System San Francisco Display 9
 for_window [class="^.*"] border pixel 2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier Mod1
 
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
@@ -51,6 +51,14 @@ assign [class="Google-chrome"] $workspace1
 assign [class="Gnome-terminal"] $workspace7
 assign [class="Sublime_text"] $workspace2
 assign [class="Spotify"] $workspace4
+assign [class="TelegramDesktop"] $workspace6
+
+for_window [class="Skype"] floating enable
+for_window [class="Skype"] border normal
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol"] border normal
+for_window [class="TelegramDesktop"] floating enable
+for_window [class="TelegramDesktop"] border normal
 
 # summon most used apps
 bindsym $mod+F1 [class="Google-chrome"] move workspace current
