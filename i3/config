@@ -1,0 +1,198 @@
+# Custom Variables
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+
+set $outputPrimary   "DP-2"
+set $outputSecondary "DVI-D-0"
+set $outputTV        "HDMI-0"
+
+# mod: Alt key
+set $mod Mod4
+
+# var for Alt key
+set $win Mod1
+
+
+# font
+font pango:System San Francisco Display 9
+
+# thin borders
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
+# kill focused window
+bindsym $mod+q kill
+
+# Setup Monitors
+exec_always xrandr --output DVI-D-0 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-0 --off --output DP-3 --off --output DP-2 --primary --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-1 --off --output DP-0 --off
+
+# Setup Wallpaper
+exec_always feh --bg-scale $HOME/Pictures/grass-blades.jpg
+
+# Startup Programs
+exec google-chrome
+exec gnome-terminal
+exec subl
+exec spotify
+exec --no-startup-id compton -b
+
+# Default workspaces
+assign [class="Google-chrome"] $workspace1
+assign [class="Gnome-terminal"] $workspace7
+assign [class="Sublime_text"] $workspace2
+assign [class="Spotify"] $workspace4
+
+# summon most used apps
+bindsym $mod+F1 [class="Google-chrome"] move workspace current
+bindsym $mod+F2 [class="terminal"]      move workspace current
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+bindsym $mod+space exec rofi -show run -lines 5 -eh 1 -width 20 -padding 30 -opacity "85" -hlbg -font "System San Francisco Display 12"
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit menu.
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $HOME/.config/i3/i3exit lock, mode "default"
+    bindsym e exec --no-startup-id $HOME/.config/i3/i3exit logout, mode "default"
+    bindsym s exec --no-startup-id $HOME/.config/i3/i3exit suspend, mode "default"
+    bindsym r exec --no-startup-id $HOME/.config/i3/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $HOME/.config/i3/i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "$mode_system"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        position top
+        status_command i3status
+        tray_output primary
+}
+
+
+#####################
+# Window Management #
+#####################
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Shift+Tab workspace prev_on_output
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+workspace $workspace1 output $outputPrimary
+workspace $workspace2 output $outputPrimary
+workspace $workspace3 output $outputPrimary
+workspace $workspace4 output $outputPrimary
+workspace $workspace5 output $outputPrimary
+workspace $workspace6 output $outputSecondary
+workspace $workspace7 output $outputSecondary
+workspace $workspace8 output $outputSecondary
+workspace $workspace9 output $outputSecondary
+workspace $workspace10 output $outputSecondary
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
