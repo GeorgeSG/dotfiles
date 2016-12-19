@@ -88,20 +88,20 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 
 bar {
-    separator_symbol " / "
+  separator_symbol " / "
         position top
         tray_output $outputPrimary
         tray_output $outputSecondary
         status_command i3blocks -c "$HOME/.config/i3/i3blocks.conf"
-    colors {
-        separator #586e75
-        background #002b36
-        statusline #aea79f
-        focused_workspace #586e75 #586e75 #ffffff
-        active_workspace #073642 #073642 #ffffff
-        inactive_workspace #002b36 #002b36 #aea79f
-        urgent_workspace #77216f #77216f #ffffff
-    }
+  colors {
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
 }
 
 
@@ -208,7 +208,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused #586e75 #00A6FF #fdf6e3 #268bd2
-client.focused_inactive #073642 #073642 #93a1a1 #002b36
-client.unfocused #002b36 #002b36 #586e75 #002b36
-client.urgent #dc322f #dc322f #fdf6e3 #dc322f
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
