@@ -2,6 +2,7 @@
 	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Yesterday.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"fallback_encoding": "Cyrillic (Windows 1251)",
+	"font_face": "Monaco for Powerline",
 	"font_size": 10.0,
 	"highlight_line": true,
 	"ignored_packages":
