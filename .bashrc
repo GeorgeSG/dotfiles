@@ -101,10 +101,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ls='ls -G'
-alias ll='ls -alFG'
-alias la='ls -AG'
-alias l='ls -CFG'
+alias ls='ls -G --color=auto'
+alias ll='ls -alFG --color=auto'
+alias la='ls -AG --color=auto'
+alias l='ls -CFG --color=auto'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
