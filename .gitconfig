@@ -42,3 +42,17 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
+[core]
+	excludesfile = /Users/georgesg/.gitignore_global
+	editor = /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl -n -w
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
