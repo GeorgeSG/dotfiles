@@ -20,6 +20,7 @@ alias gbd="git branch -D"
 alias gm="git mergetool"
 
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
+alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
 
 # Editing files
 alias aliases="vim ~/.bash_aliases"
