@@ -27,6 +27,7 @@
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgg = log --graph --pretty=format:'%Creset %s' --abbrev-commit
     lc = log ORIG_HEAD.. --stat --no-merges
     # from http://blog.kfish.org/2010/04/git-lola.html
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
