@@ -1,4 +1,4 @@
-macos: link brew cask
+macos: link brew cask tmux
 
 link:
 	-ln -s ~/Git/dotfiles/.bash_aliases ~/.bash_aliases
@@ -15,3 +15,6 @@ brew:
 
 cask:
 	sh ./macos/caskfile.sh
+
+tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
