@@ -23,8 +23,11 @@ alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"defaul
 alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
 
 # Editing files
-alias aliases="vim ~/.bash_aliases"
+alias aliases="code ~/.bash_aliases"
 alias vimrc="vim ~/.vimrc"
+
+# NPM
+alias npr="npm run"
 
 # CD-ing to some commonly used folders
 alias og="cd ~/Git"
@@ -45,3 +48,5 @@ alias fl="open -a ForkLift"
 if [ -f ~/.bash_local_aliases ]; then
     . ~/.bash_local_aliases
 fi
+
+alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
