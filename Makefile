@@ -17,5 +17,5 @@ cask:
 	sh ./macos/caskfile.sh
 
 tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	-ln -s ~/Git/dotfiles/.tmux/themes ~/.tmux/themes
