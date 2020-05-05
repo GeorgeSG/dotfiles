@@ -58,20 +58,6 @@ GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_START="\[\e[1;32m\]\w\[\e[m\]"
 GIT_PROMPT_END="\[\e[1;m\]  \[\e[1;m\]"
 
-# Old setup
-if [ -f ~/.bash-git-prompt/share/gitprompt.sh ]; then
-  GIT_PROMPT_THEME=Georgi
-  source ~/.bash-git-prompt/share/gitprompt.sh
-fi
-
-# Setup via brew
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Custom
-  GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-
 ######################
 # Sources & exports  #
 ######################
@@ -82,6 +68,20 @@ fi
 
 if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
+fi
+
+# bash-git prompt old setup
+if [ -f ~/.bash-git-prompt/share/gitprompt.sh ]; then
+  GIT_PROMPT_THEME=Georgi
+  source ~/.bash-git-prompt/share/gitprompt.sh
+fi
+
+# bash-git-prompt setup via brew
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Custom
+  GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # enable programmable completion features (you don't need to enable
