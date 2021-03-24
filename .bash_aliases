@@ -21,6 +21,9 @@ alias gm="git mergetool"
 
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
 alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach-session -t"
+alias tmls="tmux list-sessions"
 
 # Editing files
 alias aliases="code ~/.bash_aliases"
