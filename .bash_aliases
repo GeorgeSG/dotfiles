@@ -1,11 +1,6 @@
 ##### Platform independent #####
 # Git Aliases
 alias g="git"
-alias much="git"
-alias such="git"
-alias very="git"
-alias so="git"
-
 alias ga="git add"
 alias gr="git rm"
 alias gc="git commit"
