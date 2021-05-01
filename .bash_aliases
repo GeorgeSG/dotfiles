@@ -19,11 +19,22 @@ alias gpom="git pull origin master"
 alias gbd="git branch -D"
 alias gm="git mergetool"
 
+# tmux
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
 alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach-session -t"
 alias tmls="tmux list-sessions"
+
+# Docker
+alias de="docker exec"
+alias dr="docker run"
+alias db="docker build"
+alias ds="docker stop"
+alias drm="docker rm"
+alias drmi="docker rmi"
+alias dps="docker ps"
+alias dl="docker logs"
 
 # Editing files
 alias aliases="code ~/.bash_aliases"
