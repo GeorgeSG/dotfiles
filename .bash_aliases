@@ -48,14 +48,9 @@ alias be="bundle exec"
 alias share="python -m SimpleHTTPServer"
 
 ##### Mac OS Specific #####
-alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
-alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
 alias cask="brew cask"
-
 alias fl="open -a ForkLift"
 
 if [ -f ~/.bash_local_aliases ]; then
     . ~/.bash_local_aliases
 fi
-
-alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
