@@ -75,6 +75,7 @@ fi
 # bash-git prompt old setup
 if [ -f ~/.bash-git-prompt/share/gitprompt.sh ]; then
   GIT_PROMPT_THEME=Georgi
+  GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
   source ~/.bash-git-prompt/gitprompt.sh
 fi
 
