@@ -57,7 +57,7 @@ export EDITOR='code -w'
 
 # bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_START="\[\e[1;32m\]\w\[\e[m\]"
+GIT_PROMPT_START="\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]"
 GIT_PROMPT_END="\[\e[1;m\]  \[\e[1;m\]"
 
 ######################
@@ -75,7 +75,7 @@ fi
 # bash-git prompt old setup
 if [ -f ~/.bash-git-prompt/share/gitprompt.sh ]; then
   GIT_PROMPT_THEME=Georgi
-  source ~/.bash-git-prompt/share/gitprompt.sh
+  source ~/.bash-git-prompt/gitprompt.sh
 fi
 
 # bash-git-prompt setup via brew
