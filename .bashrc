@@ -1,7 +1,7 @@
 # Set prompt
 IFS='.' read -ra split_hostname <<<$(hostname | tr '[:upper:]' '[:lower:]')
 HOSTNAME=${split_hostname[0]}
-PS1='\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[0m\] \[\e[1;0m\]'
+PS1='\[\e[1;4;31m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[0m\] \[\e[1;0m\]'
 export TERM=xterm-256color
 
 shopt -s cdspell
@@ -56,7 +56,7 @@ export EDITOR='code -w'
 
 # bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_START="\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]"
+GIT_PROMPT_START="\[\e[1;4;31m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]"
 GIT_PROMPT_END="\[\e[1;m\]  \[\e[1;m\]"
 
 
