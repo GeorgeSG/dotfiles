@@ -1,7 +1,7 @@
 # Set prompt
 IFS='.' read -ra split_hostname <<<$(hostname | tr '[:upper:]' '[:lower:]')
 HOSTNAME=${split_hostname[0]}
-PS1='\[\e[1;36m\]$HOSTNAME | \[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[0m\] \[\e[1;0m\]'
+PS1='\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[0m\] \[\e[1;0m\]'
 export TERM=xterm-256color
 
 shopt -s autocd
