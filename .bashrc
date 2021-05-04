@@ -72,19 +72,9 @@ if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi
 
-# bash-git prompt old setup
+# bash-git prompt
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
-  GIT_PROMPT_THEME=Georgi
-  GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
   source ~/.bash-git-prompt/gitprompt.sh
-fi
-
-# bash-git-prompt setup via brew
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Custom
-  GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # enable programmable completion features (you don't need to enable
