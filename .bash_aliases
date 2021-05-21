@@ -17,8 +17,8 @@ alias gm="git mergetool"
 # tmux
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
 alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
-alias tmk="tmux kill-session -t"
-alias tma="tmux attach-session -t"
+alias tmks="tmux kill-session -t"
+alias tmas="tmux attach-session -t"
 alias tmls="tmux list-sessions"
 
 # Docker
