@@ -27,7 +27,7 @@ set undodir=~/.vim/undodir
 set dir=~/.vim/swapdir
 
 " Set colors
-colorscheme Tomorrow
+colorscheme Tomorrow-Night
 set t_Co=256
 set cursorline
 autocmd BufEnter * :syntax sync fromstart
@@ -262,5 +262,5 @@ map <Leader>a= :Tabularize /=<CR>
 map <Leader>a: :Tabularize /:\zs<CR>
 
 " GitGutter
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 let g:airline#extensions#tabline#fnamemod = ':t'
