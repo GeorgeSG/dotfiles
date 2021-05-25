@@ -22,6 +22,7 @@ alias tmas="tmux attach-session -t"
 alias tmls="tmux list-sessions"
 
 # Docker
+alias dc="docker-compose"
 alias de="docker exec"
 alias dr="docker run"
 alias db="docker build"
