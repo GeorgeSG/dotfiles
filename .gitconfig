@@ -53,3 +53,5 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
+[pull]
+	rebase = true
