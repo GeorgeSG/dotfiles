@@ -1,4 +1,8 @@
 ##### Platform independent #####
+# Files
+alias df1="du -h -d 1"
+
+
 # Git Aliases
 alias g="git"
 alias ga="git add"
