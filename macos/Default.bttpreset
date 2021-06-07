@@ -157,14 +157,14 @@
     "showOtherTriggersTab" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "AA9F4B5C-C439-4014-BA26-D6DB8B59117B",
+  "BTTPresetUUID" : "CCF8EF36-1605-4909-AEF2-4DC7284036E9",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "BT.G",
       "BTTAppName" : "Global",
       "BTTAppAutoInvertIcon" : 1,
       "BTTAppSpecificSettings" : {
-
+        "BTTDisableClipboardManager" : 1
       },
       "BTTTriggers" : [
         {
