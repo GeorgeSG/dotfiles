@@ -60,6 +60,10 @@ GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_START="\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]"
 GIT_PROMPT_END="\[\e[1;m\]  \[\e[1;m\]"
 
+
+# Disable deprecation warning on mac
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 ######################
 # Sources & exports  #
 ######################
