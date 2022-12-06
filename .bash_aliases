@@ -50,7 +50,7 @@ alias sass_watch="sass --watch ./:./"
 alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
-alias share="python -m SimpleHTTPServer"
+alias serve="python -m http.server 9000"
 
 ##### Mac OS Specific #####
 alias cask="brew cask"
