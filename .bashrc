@@ -4,7 +4,6 @@ HOSTNAME=${split_hostname[0]}
 PS1='\[\e[1;4;36m\]$HOSTNAME\[\e[1;0m\] \[\e[1;32m\]\w\[\e[m\]\[\e[1;0m\] \[\e[0m\] \[\e[1;0m\]'
 export TERM=xterm-256color
 
-shopt -s autocd
 shopt -s cdspell
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -69,11 +68,11 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 ######################
 
 if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+  source ~/.bash_aliases
 fi
 
 if [ -f ~/.bashrc_local ]; then
-  . ~/.bashrc_local
+  source ~/.bashrc_local
 fi
 
 # bash-git prompt
@@ -85,10 +84,10 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-  . /etc/bash_completion
+  source /etc/bash_completion
 fi
 
 # Git completion
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+  source ~/.git-completion.bash
 fi
