@@ -17,6 +17,8 @@ alias gcom="git checkout master"
 alias gpom="git pull origin master"
 alias gbd="git branch -D"
 alias gm="git mergetool"
+alias gmc="git merge --continue"
+alias grc="git rebase --continue"
 
 # tmux
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
