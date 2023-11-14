@@ -23,6 +23,7 @@
     undo = reset --soft HEAD^
     squash = rebase --autostash -i
     megasquash = "!f() { git rebase --autostash -i `git merge-base --fork-point HEAD master`; }; f"
+    unstage = restore --staged
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit
