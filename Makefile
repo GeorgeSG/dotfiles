@@ -1,5 +1,5 @@
 linux: link bash_git_prompt tmux vim
-macos: link link_mac bash_git_prompt brew cask tmux vim
+macos: link link_mac mac_setup bash_git_prompt brew cask tmux vim
 
 link:
 	rm ~/.bash_aliases
@@ -18,6 +18,9 @@ link:
 link_mac:
 	rm ~/.hushlogin
 	ln -s ~/Git/dotfiles/macos/.hushlogin ~
+
+mac_setup:
+	./macos/macos_setup.sh
 
 brew:
 	./macos/install_brew.sh
