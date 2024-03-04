@@ -1,0 +1,27 @@
+# Install casks I want on every computer.
+
+cask_args appdir: '/Applications'
+
+cask 'alt-tab'
+cask 'apparency'
+cask 'arc'
+cask 'bartender'
+cask 'datweatherdoe'
+cask 'figma'
+cask 'firefox'
+cask 'forklift'
+cask 'gifox'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'keyboardcleantool'
+cask 'monitorcontrol'
+cask 'notion'
+cask 'qlmarkdown'
+cask 'raycast'
+cask 'slack'
+cask 'soundsource'
+# cask 'istat-menus' # -- replaced by stats
+cask 'stats'
+cask 'the-unarchiver'
+cask 'visual-studio-code'
+cask 'vlc'
