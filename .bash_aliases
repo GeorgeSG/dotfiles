@@ -52,6 +52,7 @@ alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
 alias serve="python -m http.server 9000"
+alias yda="youtube-dl -x --audio-format mp3"
 
 ##### Mac OS Specific #####
 alias fl="open -a ForkLift"
