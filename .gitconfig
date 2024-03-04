@@ -6,7 +6,24 @@
     status = auto
     branch = auto
     interactive = auto
-    ui = true
+    ui = auto
+[help]
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
+[branch]
+	# Show most recently changed branches first.
+	sort = -committerdate
+[push]
+	default = simple
+	autoSetupRemote = true
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
 [alias]
     # Shorten some often used commands
     b = branch
@@ -38,14 +55,9 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ll = log --graph --date=short
-[push]
-	default = simple
-	autoSetupRemote = true
-[diff]
-    tool = default-difftool
-[difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+
+    # List contributors with number of commits.
+	contributors = shortlog --summary --numbered
+
+    # Show the user email for the current repository.
+	whoami = config user.email
