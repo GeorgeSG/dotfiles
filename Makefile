@@ -9,14 +9,15 @@ link:
 	-ln -s ~/Git/dotfiles/.tmux.conf ~
 
 brew:
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	sh ./macos/brewfile.sh
+	-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	-brew bundle --file ./macos/Brewfile
+	-sudo chsh -s /usr/local/bin/bash
 
 cask:
-	sh ./macos/caskfile-basics.sh
+	brew bundle --file ./macos/Caskfile
 
 cask_personal:
-	sh ./macos/caskfile-personal.sh
+	-brew bundle --file ./macos/Caskfile.personal
 
 tmux:
 	-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -27,6 +28,6 @@ bash_git_prompt:
 	-ln -s ~/Git/dotfiles/.git-prompt-colors.sh ~
 
 vim:
- 	-ln -s ~/Git/dotfiles/.vim ~
+	-ln -s ~/Git/dotfiles/.vim ~
 	-ln -s ~/Git/dotfiles/.vimrc ~
 	-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

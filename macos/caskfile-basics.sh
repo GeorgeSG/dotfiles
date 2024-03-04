@@ -1,7 +1,5 @@
 # Install casks I want on every computer.
 
-brew tap homebrew/cask
-
 brew install --cask alt-tab
 brew install --cask apparency
 brew install --cask arc
