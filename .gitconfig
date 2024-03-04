@@ -9,6 +9,8 @@
     # Shorten some often used commands
     b = branch
     c = commit
+    sw = switch
+    swm = switch master
     co = checkout
     com = checkout master
     ss = status
@@ -36,16 +38,11 @@
     ll = log --graph --date=short
 [push]
 	default = simple
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	autoSetupRemote = true
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
@@ -53,3 +50,5 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
+[commit]
+	gpgsign = false
