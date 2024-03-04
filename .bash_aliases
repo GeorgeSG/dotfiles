@@ -1,7 +1,7 @@
 ##### Platform independent #####
+
 # Files
 alias df1="du -h -d 1"
-
 
 # Git Aliases
 alias g="git"
@@ -48,14 +48,12 @@ alias npr="npm run"
 # CD-ing to some commonly used folders
 alias og="cd ~/Git"
 
-alias sass_watch="sass --watch ./:./"
 alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
 alias serve="python -m http.server 9000"
 
 ##### Mac OS Specific #####
-alias cask="brew cask"
 alias fl="open -a ForkLift"
 
 if [ -f ~/.bash_local_aliases ]; then
