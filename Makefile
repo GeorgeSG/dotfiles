@@ -4,6 +4,7 @@ macos: link bash_git_prompt brew cask tmux vim
 link:
 	-ln -s ~/Git/dotfiles/.bash_aliases ~
 	-ln -s ~/Git/dotfiles/.bashrc ~
+	-ln -s ~/Git/dotfiles/.bash_profile ~
 	-ln -s ~/Git/dotfiles/.git-completion.bash ~
 	-ln -s ~/Git/dotfiles/.gitconfig ~
 	-ln -s ~/Git/dotfiles/.tmux.conf ~
