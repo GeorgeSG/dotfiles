@@ -2,12 +2,18 @@ linux: link bash_git_prompt tmux vim
 macos: link bash_git_prompt brew cask tmux vim
 
 link:
-	-ln -s ~/Git/dotfiles/.bash_aliases ~
-	-ln -s ~/Git/dotfiles/.bashrc ~
-	-ln -s ~/Git/dotfiles/.bash_profile ~
-	-ln -s ~/Git/dotfiles/.git-completion.bash ~
-	-ln -s ~/Git/dotfiles/.gitconfig ~
-	-ln -s ~/Git/dotfiles/.tmux.conf ~
+	-rm ~/.bash_aliases
+	-rm ~/.bashrc
+	-rm ~/.bash_profile
+	-rm ~/.git-completion.bash
+	-rm ~/.gitconfig
+	-rm ~/.tmux.conf
+	-ln -s ~/Git/dotfiles/bash/.bash_aliases ~
+	-ln -s ~/Git/dotfiles/bash/.bashrc ~
+	-ln -s ~/Git/dotfiles/bash/.bash_profile ~
+	-ln -s ~/Git/dotfiles/git/.git-completion.bash ~
+	-ln -s ~/Git/dotfiles/git/.gitconfig ~
+	-ln -s ~/Git/dotfiles/tmux/.tmux.conf ~
 
 brew:
 	-./macos/install_brew.sh
@@ -21,11 +27,12 @@ cask_personal:
 
 tmux:
 	-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	-ln -s ~/Git/dotfiles/.tmux/themes ~/.tmux/themes
+	-ln -s ~/Git/dotfiles/tmux/themes ~/.tmux/themes
 
 bash_git_prompt:
 	-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-	-ln -s ~/Git/dotfiles/.git-prompt-colors.sh ~
+	-rm ~/.git-prompt-colors
+	-ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
 
 vim:
 	-ln -s ~/Git/dotfiles/.vim ~
