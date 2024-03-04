@@ -71,8 +71,8 @@ if [ -f ~/.bash_aliases ]; then
   source ~/.bash_aliases
 fi
 
-if [ -f ~/.bashrc_local ]; then
-  source ~/.bashrc_local
+if [ -f ~/.bashrc.local ]; then
+  source ~/.bashrc.local
 fi
 
 # bash-git prompt
