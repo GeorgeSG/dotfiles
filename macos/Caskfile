@@ -23,5 +23,6 @@ cask 'soundsource'
 # cask 'istat-menus' # -- replaced by stats
 cask 'stats'
 cask 'the-unarchiver'
+cask 'rar'
 cask 'visual-studio-code'
 cask 'vlc'
