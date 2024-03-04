@@ -2,6 +2,13 @@
 
 # Files
 alias df1="du -h -d 1"
+alias ls='ls -hG'
+alias ll='ls -alhFG'
+alias la='ls -AG'
+alias l='ls -CFG'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Git Aliases
 alias g="git"
@@ -45,14 +52,18 @@ alias vimrc="vim ~/.vimrc"
 # NPM
 alias npr="npm run"
 
-# CD-ing to some commonly used folders
-alias og="cd ~/Git"
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
 
 alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
 alias serve="python -m http.server 9000"
 alias yda="youtube-dl -x --audio-format mp3"
+
+# CD-ing to some commonly used folders
+alias og="cd ~/Git"
 
 ##### Mac OS Specific #####
 alias fl="open -a ForkLift"
