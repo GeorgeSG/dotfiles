@@ -10,12 +10,11 @@ link:
 	-ln -s ~/Git/dotfiles/.tmux.conf ~
 
 brew:
-	-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	-brew bundle --file ./macos/Brewfile
+	-./macos/install_brew.sh
 	-sudo chsh -s /usr/local/bin/bash
 
 cask:
-	brew bundle --file ./macos/Caskfile
+	-brew bundle --file ./macos/Caskfile
 
 cask_personal:
 	-brew bundle --file ./macos/Caskfile.personal
