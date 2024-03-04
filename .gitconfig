@@ -50,5 +50,3 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
-[commit]
-	gpgsign = false
