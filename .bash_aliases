@@ -57,6 +57,6 @@ alias yda="youtube-dl -x --audio-format mp3"
 ##### Mac OS Specific #####
 alias fl="open -a ForkLift"
 
-if [ -f ~/.bash_local_aliases ]; then
-    . ~/.bash_local_aliases
+if [ -f ~/.bash_aliases.local ]; then
+    . ~/.bash_aliases.local
 fi

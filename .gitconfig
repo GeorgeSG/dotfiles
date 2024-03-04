@@ -1,10 +1,12 @@
-
+# local user config, usernames, etc
+[include]
+    path=~/.gitconfig.local
 [color]
     diff = auto
     status = auto
     branch = auto
     interactive = auto
-    ui = auto
+    ui = true
 [alias]
     # Shorten some often used commands
     b = branch
@@ -47,6 +49,3 @@
 	clean = git media clean %f
 	smudge = git media smudge %f
 	required = true
-# local user config, usernames, etc
-[include]
-    path=~/.gitconfig-local
