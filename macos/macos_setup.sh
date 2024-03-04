@@ -52,16 +52,29 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 sudo systemsetup -settimezone "Europe/Sofia" > /dev/null
 
 ###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+###############################################################################
 # Energy saving                                                               #
 ###############################################################################
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
-# Sleep the display after 10 minutes
+# Sleep the display after 10 minute
 sudo pmset -a displaysleep 10
 
-###############################################################################
+############################################################### ################
 # Screen                                                                      #
 ###############################################################################
 
@@ -84,7 +97,6 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
-# TODO: Not sure this section works tbh
 
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 30
