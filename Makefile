@@ -9,10 +9,14 @@ link:
 	-ln -s ~/Git/dotfiles/.tmux.conf ~/.tmux.conf
 
 brew:
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	sh ./macos/brewfile.sh
 
 cask:
-	sh ./macos/caskfile.sh
+	sh ./macos/caskfile-basics.sh
+
+cask_personal:
+	sh ./macos/caskfile-personal.sh
 
 tmux:
 	-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
