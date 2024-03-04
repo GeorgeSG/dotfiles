@@ -34,6 +34,7 @@ cask_personal:
 
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	rm ~/.tmux/themes
 	ln -s ~/Git/dotfiles/tmux/themes ~/.tmux/themes
 
 bash_git_prompt:
