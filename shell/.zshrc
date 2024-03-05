@@ -20,6 +20,7 @@ autoload -Uz compinit && compinit
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=50000
 HISTSIZE=10000
+HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
 
 setopt extended_history   # record start time and elapsed time in history file
 setopt share_history      # share history across multiple zsh sessions
