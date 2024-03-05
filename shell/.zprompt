@@ -2,7 +2,6 @@ source $HOME/Git/zsh-git-prompt/zshrc.sh
 
 setopt PROMPT_SUBST
 
-HOSTN="$(hostname | tr '[:upper:]' '[:lower:]')"
 
 PROMPT='%B%U%F{cyan}% %m%u%F{green} %~$(git_super_status)%f %b '
 RPROMPT='%*'
