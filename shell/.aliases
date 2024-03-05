@@ -11,17 +11,16 @@ alias ll='ls -alhFG'
 alias la='ls -AG'
 alias l='ls -CFG'
 
-if test $(which zoxide); then
-  alias cd="z"
-fi;
+# if test $(which zoxide); then
+#   alias cd="z"
+# fi;
 
 # eza aliases, if available
 if test $(which eza); then
   eza_params=(
     '--git' '--icons' '--group' '--group-directories-first'
-    '--time-style=relative' '--total-size'
+    '--time-style=relative'
   )
-
   alias ls='eza $eza_params -1'
   alias l='eza --git-ignore $eza_params'
   alias ll='eza --all --header --long $eza_params'
