@@ -7,8 +7,8 @@ setopt AUTO_CD
 setopt NO_CASE_GLOB
 setopt GLOB_COMPLETE
 
-setopt CORRECT
-setopt CORRECT_ALL
+setopt correct
+setopt correct_all
 
 autoload -Uz compinit && compinit
 
@@ -21,19 +21,16 @@ HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 SAVEHIST=50000
 HISTSIZE=10000
 
-setopt EXTENDED_HISTORY
-# share history across multiple zsh sessions
-setopt SHARE_HISTORY
-# append to history
-setopt APPEND_HISTORY
-# adds commands as they are typed, not at shell exit
-setopt INC_APPEND_HISTORY
-# do not store duplications
-setopt HIST_IGNORE_DUPS
-# removes blank lines from history
-setopt HIST_REDUCE_BLANKS
-# show !! before executing
-setopt HIST_VERIFY
+setopt extended_history   # record start time and elapsed time in history file
+setopt share_history      # share history across multiple zsh sessions
+setopt append_history     # append to history
+setopt inc_append_history # adds commands as they are typed, not at shell exit
+setopt hist_ignore_dups   # do not store duplications
+setopt hist_reduce_blanks # removes blank lines from history
+setopt hist_verify        # show !! before executing
+setopt hist_ignore_space  # remove command lines beginning with a space from history
+
+setopt no_beep            # Don't beep on command input error
 
 # --------
 # Source & include
