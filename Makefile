@@ -3,16 +3,21 @@ macos: link link_mac mac_setup bash_git_prompt brew cask tmux vim
 
 link:
 	-rm ~/.aliases
-	-rm ~/.bashrc
 	-rm ~/.bash_profile
+	-rm ~/.bashrc
 	-rm ~/.git-completion.bash
 	-rm ~/.gitconfig
 	-rm ~/.tmux.conf
+	-rm ~/.zsh/.zprompt
+	-rm ~/.zsh/.zshrc
+	mkdir -p ~/.zshs
+	ln -s ~/Git/dotfiles/git/.git-completion.bash ~
+	ln -s ~/Git/dotfiles/git/.gitconfig ~
 	ln -s ~/Git/dotfiles/shell/.aliases ~
 	ln -s ~/Git/dotfiles/shell/.bashrc ~
 	ln -s ~/Git/dotfiles/shell/.bash_profile ~
-	ln -s ~/Git/dotfiles/git/.git-completion.bash ~
-	ln -s ~/Git/dotfiles/git/.gitconfig ~
+	ln -s ~/Git/dotfiles/shell/.zprompt ~/.zsh/
+	ln -s ~/Git/dotfiles/shell/.zshrc ~/.zsh/
 	ln -s ~/Git/dotfiles/tmux/.tmux.conf ~
 
 link_mac:
