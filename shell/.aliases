@@ -15,10 +15,10 @@ alias l='ls -CFG'
 if test  $(which eza); then
   eza_params=(
     '--git' '--icons' '--group' '--group-directories-first'
-    '--time-style=long-iso'
+    '--time-style=relative' '--total-size'
   )
 
-  alias ls='eza $eza_params'
+  alias ls='eza $eza_params -1'
   alias l='eza --git-ignore $eza_params'
   alias ll='eza --all --header --long $eza_params'
   alias llm='eza --all --header --long --sort=modified $eza_params'
@@ -26,6 +26,12 @@ if test  $(which eza); then
   alias lx='eza -lbhHigUmuSa@'
   alias lt='eza --tree $eza_params'
   alias tree='eza --tree $eza_params'
+
+  alias lA='ll --sort=acc'
+  alias lC='ll --sort=cr'
+  alias lM='ll --sort=mod'
+  alias lS='ll --sort=size'
+  alias lX='ll --sort=ext'
 fi
 
 alias grep='grep --color=auto'
