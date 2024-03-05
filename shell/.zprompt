@@ -3,6 +3,7 @@ source $HOME/Git/zsh-git-prompt/zshrc.sh
 PROMPT='%B%U%F{cyan}% %m%u%F{green} %~ $(git_super_status)%f %{%G%}%b '
 RPROMPT='%F{cyan}%*'
 
+# No right padding on RPROMPT
 ZLE_RPROMPT_INDENT=0
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{cyan}% ("
