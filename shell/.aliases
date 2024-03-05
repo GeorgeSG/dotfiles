@@ -11,8 +11,12 @@ alias ll='ls -alhFG'
 alias la='ls -AG'
 alias l='ls -CFG'
 
+if test $(which zoxide); then
+ alias cd="z"
+fi;
+
 # eza aliases, if available
-if test  $(which eza); then
+if test $(which eza); then
   eza_params=(
     '--git' '--icons' '--group' '--group-directories-first'
     '--time-style=relative' '--total-size'
