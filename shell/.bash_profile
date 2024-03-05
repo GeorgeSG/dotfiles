@@ -65,9 +65,14 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Sources & exports  #
 ######################
 
-if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
 fi
+
+if [ -f ~/.aliases.local ]; then
+    . ~/.aliases.local
+fi
+
 
 if [ -f ~/.bash_profile.local ]; then
   source ~/.bash_profile.local
