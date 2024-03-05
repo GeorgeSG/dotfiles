@@ -1,7 +1,12 @@
 source $HOME/Git/zsh-git-prompt/zshrc.sh
 
+function git_email_prompt() {
+  GIT_USER=$(git config user.email)
+  echo $GIT_USER
+}
+
 PROMPT='%B%U%F{cyan}% %m%u%F{green} %~ $(git_super_status)%f %{%G%}%b '
-RPROMPT='%F{cyan}%*'
+RPROMPT='%B%F{42}% $(git_email_prompt)%f %F{cyan}%*%b'
 
 # No right padding on RPROMPT
 ZLE_RPROMPT_INDENT=0
