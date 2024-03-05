@@ -1,4 +1,4 @@
-ZDOTDIR=$HOME/.zsh
+ZDOTDIR=~/.zsh
 
 source $ZDOTDIR/.zprompt
 
@@ -10,6 +10,8 @@ setopt GLOB_COMPLETE
 setopt correct
 setopt correct_all
 
+setopt completeinword # not just at the end
+
 autoload -Uz compinit && compinit
 
 
@@ -17,7 +19,7 @@ autoload -Uz compinit && compinit
 # History
 # --------
 
-HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+HISTFILE=${ZDOTDIR:-~}/.zsh_history
 SAVEHIST=50000
 HISTSIZE=10000
 HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
@@ -38,16 +40,34 @@ setopt no_beep            # Don't beep on command input error
 # --------
 
 # Include functions
-fpath+=$HOME/Git/dotfiles/functions
+fpath+=~/Git/dotfiles/functions
 autoload extract
 
 # Load bashcompinit for some old bash completions
 autoload bashcompinit && bashcompinit
 
 source $ZDOTDIR/.zshrc.local
-source $HOME/.aliases
-source $HOME/.aliases.local
+source ~/.aliases
+source ~/.aliases.local
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# --------
 # Plugins
+# --------
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source "$ZDOTDIR/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+
+source "$ZDOTDIR/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+
+# https://github.com/arzzen/calc.plugin.zsh
+source "$ZDOTDIR/plugins/calc.plugin.zsh/calc.plugin.zsh"
+
+# https://github.com/lukechilds/zsh-better-npm-completion
+source "$ZDOTDIR/plugins/.zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
+
+# https://github.com/sunlei/zsh-ssh
+source "$ZDOTDIR/plugins/zsh-ssh/zsh-ssh.zsh"
+
+
+# https://github.com/Tarrasch/zsh-bd
+source "$ZDOTDIR/plugins/bd/bd.zsh"

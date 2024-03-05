@@ -6,10 +6,27 @@ alias ....="cd ../../../"
 
 alias df1="du -h -d 1"
 
-alias ls='ls -hG'
+# alias ls='ls -hG'
 alias ll='ls -alhFG'
 alias la='ls -AG'
 alias l='ls -CFG'
+
+# eza aliases, if available
+if test  $(which eza); then
+  eza_params=(
+    '--git' '--icons' '--group' '--group-directories-first'
+    '--time-style=long-iso'
+  )
+
+  alias ls='eza $eza_params'
+  alias l='eza --git-ignore $eza_params'
+  alias ll='eza --all --header --long $eza_params'
+  alias llm='eza --all --header --long --sort=modified $eza_params'
+  alias la='eza -lbhHigUmuSa'
+  alias lx='eza -lbhHigUmuSa@'
+  alias lt='eza --tree $eza_params'
+  alias tree='eza --tree $eza_params'
+fi
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

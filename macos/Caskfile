@@ -2,6 +2,8 @@
 
 cask_args appdir: '/Applications'
 
+tap 'homebrew/cask-fonts'
+
 cask 'alt-tab'
 cask 'apparency'
 cask 'arc'
@@ -9,6 +11,7 @@ cask 'bartender'
 cask 'datweatherdoe'
 cask 'figma'
 cask 'firefox'
+cask 'font-caskaydia-cove-nerd-font'
 cask 'forklift'
 cask 'gifox'
 cask 'google-chrome'

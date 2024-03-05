@@ -53,4 +53,10 @@ vim:
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 zsh:
-	git clone git@github.com:softmoth/zsh-vim-mode.git ~/.zsh/zsh-vim-modes
+	mkdir -p ~/.zsh/plugins
+	-git clone git@github.com:arzzen/calc.plugin.zsh.git ~/.zsh/plugins/calc.plugin.zsh
+	-git clone git@github.com:softmoth/zsh-vim-mode.git ~/.zsh/plugins/zsh-vim-mode
+	-git clone https://github.com/lukechilds/zsh-better-npm-completion.git ~/.zsh/plugins/.zsh-better-npm-completion
+	-git clone https://github.com/sunlei/zsh-ssh ~/.zsh/plugins/zsh-ssh
+	mkdir -p ~/.zsh/plugins/bd
+	curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.zsh/plugins/bd/bd.zsh
