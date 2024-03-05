@@ -41,9 +41,13 @@ setopt no_beep            # Don't beep on command input error
 fpath+=$HOME/Git/dotfiles/functions
 autoload extract
 
-# load bashcompinit for some old bash completions
+# Load bashcompinit for some old bash completions
 autoload bashcompinit && bashcompinit
 
 source $ZDOTDIR/.zshrc.local
 source $HOME/.aliases
 source $HOME/.aliases.local
+
+# Plugins
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$ZDOTDIR/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
