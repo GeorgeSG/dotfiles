@@ -1,5 +1,5 @@
-linux: link bash_git_prompt tmux vim
-macos: link link_mac mac_setup bash_git_prompt brew cask tmux vim
+linux: link bash_git_prompt tmux vim zsh
+macos: link link_mac mac_setup bash_git_prompt brew cask tmux vim zsh
 
 link:
 	-rm ~/.aliases
@@ -10,7 +10,7 @@ link:
 	-rm ~/.tmux.conf
 	-rm ~/.zsh/.zprompt
 	-rm ~/.zsh/.zshrc
-	mkdir -p ~/.zshs
+	mkdir -p ~/.zsh
 	ln -s ~/Git/dotfiles/git/.git-completion.bash ~
 	ln -s ~/Git/dotfiles/git/.gitconfig ~
 	ln -s ~/Git/dotfiles/shell/.aliases ~
@@ -51,3 +51,6 @@ vim:
 	ln -s ~/Git/dotfiles/.vim ~
 	ln -s ~/Git/dotfiles/.vimrc ~
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+zsh:
+	git clone git@github.com:softmoth/zsh-vim-mode.git ~/.zsh/zsh-vim-modes
