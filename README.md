@@ -10,6 +10,8 @@ Some of my dotfiles
 .bash_profile
 .bash_profile.local
 .bashrc
+.gitconfig
+.gitconfig.local
 .vim/
 .vimrc
 .zsh/
