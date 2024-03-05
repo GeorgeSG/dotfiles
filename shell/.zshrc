@@ -2,7 +2,6 @@ ZDOTDIR=~/.zsh
 
 source $ZDOTDIR/.zprompt
 
-
 setopt AUTO_CD
 setopt NO_CASE_GLOB
 setopt GLOB_COMPLETE
@@ -11,8 +10,6 @@ setopt correct
 setopt correct_all
 
 setopt completeinword # not just at the end
-
-autoload -Uz compinit && compinit
 
 
 # --------
@@ -43,14 +40,12 @@ setopt no_beep            # Don't beep on command input error
 fpath+=~/Git/dotfiles/functions
 autoload extract
 
-# Load bashcompinit for some old bash completions
-autoload bashcompinit && bashcompinit
-
-source $ZDOTDIR/.zshrc.local
-source ~/.aliases
-source ~/.aliases.local
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.aliases.local ] && source ~/.aliases.local
+
 
 # --------
 # Plugins
@@ -70,3 +65,13 @@ source "$ZDOTDIR/plugins/zsh-ssh/zsh-ssh.zsh"
 
 # https://github.com/Tarrasch/zsh-bd
 source "$ZDOTDIR/plugins/bd/bd.zsh"
+
+
+# --------
+# Comp init
+# --------
+
+autoload -Uz compinit && compinit -i
+
+# Load bashcompinit for some old bash completions
+autoload bashcompinit && bashcompinit
