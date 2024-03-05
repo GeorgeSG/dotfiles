@@ -68,6 +68,5 @@ source "$ZDOTDIR/plugins/.zsh-better-npm-completion/zsh-better-npm-completion.pl
 # https://github.com/sunlei/zsh-ssh
 source "$ZDOTDIR/plugins/zsh-ssh/zsh-ssh.zsh"
 
-
 # https://github.com/Tarrasch/zsh-bd
 source "$ZDOTDIR/plugins/bd/bd.zsh"
