@@ -5,11 +5,13 @@ Some of my dotfiles
 
 ### Home folder structure
 ```
-.bashrc
-.bash_profile
-.bash_profile.local
 .aliases
 .aliases.local
+.bash_profile
+.bash_profile.local
+.bashrc
+.vim/
+.vimrc
 .zsh/
   .zshrc
   .zshrc.local
