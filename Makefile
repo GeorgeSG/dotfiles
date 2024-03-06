@@ -48,7 +48,7 @@ bash_git_prompt:
 	-ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
 
 vim:
-  -rm ~/.vim
+	-rm ~/.vim
 	-rm ~/.vimrc
 	ln -s ~/Git/dotfiles/.vim ~
 	ln -s ~/Git/dotfiles/.vimrc ~
