@@ -50,7 +50,7 @@ bash_git_prompt:
 vim:
 	ln -s ~/Git/dotfiles/.vim ~
 	ln -s ~/Git/dotfiles/.vimrc ~
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 zsh:
 	mkdir -p ~/.zsh/plugins
