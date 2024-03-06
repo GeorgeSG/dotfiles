@@ -43,7 +43,7 @@ tmux:
 	ln -s ~/Git/dotfiles/tmux/themes ~/.tmux/themes
 
 bash_git_prompt:
-	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+	-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 	-rm ~/.git-prompt-colors
 	ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
 
