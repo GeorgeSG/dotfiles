@@ -1,5 +1,5 @@
 linux: link bash_git_prompt tmux vim zsh
-macos: link link_mac mac_setup bash_git_prompt brew cask tmux vim zsh
+macos: link link_mac mac_setup bash_git_prompt tmux vim zsh brew cask
 
 link:
 	-rm ~/.aliases
