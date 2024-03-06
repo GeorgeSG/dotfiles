@@ -10,6 +10,7 @@ link:
 	-rm ~/.tmux.conf
 	-rm ~/.zsh/.zprompt
 	-rm ~/.zsh/.zshrc
+	-rm ~/.zshenv
 	mkdir -p ~/.zsh
 	ln -s ~/Git/dotfiles/git/.git-completion.bash ~
 	ln -s ~/Git/dotfiles/git/.gitconfig ~
@@ -18,6 +19,7 @@ link:
 	ln -s ~/Git/dotfiles/shell/.bash_profile ~
 	ln -s ~/Git/dotfiles/shell/.zprompt ~/.zsh/
 	ln -s ~/Git/dotfiles/shell/.zshrc ~/.zsh/
+	ln -s ~/Git/dotfiles/shell/.zshenv ~
 	ln -s ~/Git/dotfiles/tmux/.tmux.conf ~
 
 link_mac:
