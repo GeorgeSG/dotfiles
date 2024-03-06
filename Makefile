@@ -45,9 +45,11 @@ tmux:
 bash_git_prompt:
 	-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 	-rm ~/.git-prompt-colors
-	ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
+	-ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
 
 vim:
+  -rm ~/.vim
+	-rm ~/.vimrc
 	ln -s ~/Git/dotfiles/.vim ~
 	ln -s ~/Git/dotfiles/.vimrc ~
 	-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
