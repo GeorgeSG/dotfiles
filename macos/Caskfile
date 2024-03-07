@@ -12,7 +12,7 @@ cask 'datweatherdoe'
 cask 'figma'
 cask 'firefox'
 cask 'font-caskaydia-cove-nerd-font'
-cask 'forklift'
+# cask 'forklift' # -- use older version
 cask 'gifox'
 cask 'google-chrome'
 cask 'iterm2'
