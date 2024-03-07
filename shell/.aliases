@@ -80,7 +80,10 @@ alias dps="docker ps"
 alias dl="docker logs"
 
 # Editing files
-alias aliases="code ~/.bash_aliases"
+alias aliases="code ~/.aliases"
+alias laliases="code ~/.aliases.local"
+alias zshrc="code $ZDOTDIR/.zshrc"
+alias lzshrc="code $ZDOTDIR/.zshrc.local"
 alias vimrc="vim ~/.vimrc"
 
 # NPM
@@ -90,7 +93,6 @@ alias npr="npm run"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
-alias grep="grep --color=auto"
 alias c="clear"
 alias be="bundle exec"
 alias serve="python -m http.server 9000"
