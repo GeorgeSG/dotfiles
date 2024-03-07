@@ -2,6 +2,7 @@
 
 # Copied from https://mths.be/macos
 # Also look at https://macos-defaults.com
+# Also look at https://gist.github.com/brandonb927/3195465/
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
