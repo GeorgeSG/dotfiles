@@ -2,3 +2,4 @@
 .vim/bundle
 .vim/undodir
 Brewfile.lock.json
+Caskfile.lock.json

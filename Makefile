@@ -58,6 +58,7 @@ vim:
 
 zsh:
 	mkdir -p ~/.zsh/plugins
+	-git clone git@github.com:zsh-git-prompt/zsh-git-prompt.git ~/.zsh/plugins/zsh-git-prompt
 	-git clone git@github.com:arzzen/calc.plugin.zsh.git ~/.zsh/plugins/calc.plugin.zsh
 	-git clone git@github.com:softmoth/zsh-vim-mode.git ~/.zsh/plugins/zsh-vim-mode
 	-git clone https://github.com/lukechilds/zsh-better-npm-completion.git ~/.zsh/plugins/.zsh-better-npm-completion
