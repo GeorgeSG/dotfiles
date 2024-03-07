@@ -29,12 +29,13 @@ link_mac:
 mac_setup:
 	xcode-select --install
 	./macos/macos_setup.sh
+	./macos/install_brew.sh
+	brew install zsh
+	sudo chsh -s $(brew --prefix)/bin/zsh
 
 brew:
-	./macos/install_brew.sh
 	brew bundle --file ./macos/Brewfile
 	brew bundle --file ./macos/Caskfile
-	sudo chsh -s $(brew --prefix)/bin/zsh
 
 cask_personal:
 	brew bundle --file ./macos/Caskfile.personal
