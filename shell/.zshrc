@@ -38,7 +38,6 @@ setopt no_beep            # Don't beep on command input error
 fpath+=~/Git/dotfiles/functions
 autoload extract
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
 [ -f ~/.aliases ] && source ~/.aliases
@@ -77,3 +76,5 @@ autoload bashcompinit && bashcompinit
 
 # Prompt
 source $ZDOTDIR/.zprompt
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
