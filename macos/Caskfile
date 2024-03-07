@@ -3,6 +3,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 
 cask 'alt-tab'
 cask 'apparency'
@@ -12,13 +13,14 @@ cask 'datweatherdoe'
 cask 'figma'
 cask 'firefox'
 cask 'font-caskaydia-cove-nerd-font'
-# cask 'forklift' # -- use older version
+cask 'forklift3'
 cask 'gifox'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'keyboardcleantool'
 cask 'monitorcontrol'
 cask 'notion'
+cask 'quicklook-json'
 cask 'qlmarkdown'
 cask 'raycast'
 cask 'slack'
@@ -29,3 +31,7 @@ cask 'the-unarchiver'
 cask 'rar'
 cask 'visual-studio-code'
 cask 'vlc'
+
+# Mac App Store
+mas 'Dato', id: 1470584107
+mas 'rcmd', id: 1596283165
