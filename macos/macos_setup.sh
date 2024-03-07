@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Copied from https://mths.be/macos
+# Also look at https://macos-defaults.com
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -93,6 +94,30 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
+# Desktop & Finder                                                            #
+###############################################################################
+
+# Show extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+# Show path bar
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# Default to list view
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders on top
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Show icon in title bar
+defaults write com.apple.universalaccess "showWindowTitlebarIcons" -bool "true"
+
+# Show folders first on desktop
+defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true"
+
+killall Finder
+
+###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
@@ -117,3 +142,21 @@ defaults write com.apple.dock expose-group-by-app -bool false
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+
+# Faster dock animation time
+defaults write com.apple.dock "autohide-time-modifier" -float "0.2"
+
+# Don't show recents in dock
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# Scroll up on app in dock to open expose
+defaults write com.apple.dock "scroll-to-open" -bool "true"
+
+killall Dock
+
+###############################################################################
+# Menu Bar                                                                    #
+###############################################################################
+
+# Set clock format
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"HH:mm\""
