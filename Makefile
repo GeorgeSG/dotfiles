@@ -27,14 +27,14 @@ link_mac:
 	ln -s ~/Git/dotfiles/macos/.hushlogin ~
 
 mac_setup:
+	xcode-select --install
 	./macos/macos_setup.sh
 
 brew:
 	./macos/install_brew.sh
-	sudo chsh -s /usr/local/bin/bash
-
-cask:
+	brew bundle --file ./macos/Brewfile
 	brew bundle --file ./macos/Caskfile
+	sudo chsh -s /opt/homebrew/bin/zsh
 
 cask_personal:
 	brew bundle --file ./macos/Caskfile.personal
