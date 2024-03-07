@@ -1,10 +1,8 @@
 ZDOTDIR=~/.zsh
 
-source $ZDOTDIR/.zprompt
-
-setopt AUTO_CD
-setopt NO_CASE_GLOB
-setopt GLOB_COMPLETE
+setopt auto_cd
+setopt no_case_glob
+setopt glob_complete
 
 setopt correct
 setopt correct_all
@@ -75,3 +73,7 @@ autoload -Uz compinit && compinit -i
 
 # Load bashcompinit for some old bash completions
 autoload bashcompinit && bashcompinit
+
+
+# Prompt
+source $ZDOTDIR/.zprompt

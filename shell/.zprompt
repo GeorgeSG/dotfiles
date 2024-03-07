@@ -1,4 +1,5 @@
-source $HOME/Git/zsh-git-prompt/zshrc.sh
+GIT_PROMPT_EXECUTABLE="shell"
+source $ZDOTDIR/plugins/zsh-git-prompt/zshrc.sh
 
 function git_email_prompt() {
   GIT_USER=$(git config user.email)
