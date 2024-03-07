@@ -34,7 +34,7 @@ brew:
 	./macos/install_brew.sh
 	brew bundle --file ./macos/Brewfile
 	brew bundle --file ./macos/Caskfile
-	sudo chsh -s /opt/homebrew/bin/zsh
+	sudo chsh -s $(brew --prefix)/bin/zsh
 
 cask_personal:
 	brew bundle --file ./macos/Caskfile.personal
