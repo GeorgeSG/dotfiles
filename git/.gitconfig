@@ -45,6 +45,12 @@
     squash = rebase --autostash -i
     megasquash = "!f() { git rebase --autostash -i `git merge-base --fork-point HEAD master`; }; f"
     unstage = restore --staged
+    # fzf commands
+    cf="!checkout_fzf() { git branch | fzf-tmux -p -h 25% --header 'git checkout' | xargs git checkout; }; checkout_fzf"
+    sf="!switch_fzf() { git branch | fzf-tmux -p -h 25% --header 'git switch' | xargs git switch; }; switch_fzf"
+    af = "!add_files() { git status -s | awk '{print $2}' | fzf-tmux -m --header 'git add' | xargs git add; }; add_files"
+    afc = "!add_files_and_commit() { git status -s | awk '{print $2}' | fzf-tmux -m --header 'git add and commit' | xargs git add && git commit --verbose; }; add_files_and_commit"
+    mf = "!merge() { git branch | fzf-tmux -p -h 25% --header 'git merge' | xargs git merge; }; merge"
 
     # various pretty loggers from various places
     l = log --pretty=oneline --abbrev-commit

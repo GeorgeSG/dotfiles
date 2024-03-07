@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Copied from https://mths.be/macos
 # Also look at https://macos-defaults.com
