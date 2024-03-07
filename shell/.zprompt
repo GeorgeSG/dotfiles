@@ -6,13 +6,13 @@ function git_email_prompt() {
   echo $GIT_USER
 }
 
-PROMPT='%B%U%F{cyan}% %m%u%F{green} %~ $(git_super_status)%f %{%G%}%b '
+PROMPT='%B%U%F{cyan}% %m%u%F{green} %~$(git_super_status)%f %{%G%}%b '
 RPROMPT='%B%F{42}% $(git_email_prompt)%f %F{cyan}%*%b'
 
 # No right padding on RPROMPT
 ZLE_RPROMPT_INDENT=0
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{cyan}% ("
+ZSH_THEME_GIT_PROMPT_PREFIX=" %B%F{cyan}% ("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%B%F{cyan}% )"
 ZSH_THEME_GIT_PROMPT_SEPARATOR="%B%F{cyan}% |"
 ZSH_THEME_GIT_PROMPT_BRANCH=""
