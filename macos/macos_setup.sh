@@ -13,6 +13,17 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  echo "Set computer name:"
+  read COMPUTER_NAME
+  sudo scutil --set ComputerName $COMPUTER_NAME
+  sudo scutil --set HostName $COMPUTER_NAME
+  sudo scutil --set LocalHostName $COMPUTER_NAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+fi
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -49,6 +60,14 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable smart quotes and dashes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable Photos.app from starting everytime a device is plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 # This is throwing errors - investigate
 # sudo systemsetup -settimezone "Europe/Sofia" > /dev/null
@@ -77,6 +96,10 @@ sudo pmset -a displaysleep 10
 # Screen                                                                      #
 ###############################################################################
 
+# Requiring password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
@@ -88,7 +111,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
-defaults write NSGlobalDomain AppleFontSmoothing -int 1
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
@@ -115,11 +138,23 @@ defaults write com.apple.universalaccess "showWindowTitlebarIcons" -bool "true"
 # Show folders first on desktop
 defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true"
 
+# Avoid creation of .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Allow text selection in Quick Look/Preview in Finder by default
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
 killall Finder
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
+
+echo "Wipe all (default) app icons from the Dock? (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  defaults write com.apple.dock persistent-apps -array
+fi
 
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 30
@@ -160,3 +195,32 @@ killall Dock
 
 # Set clock format
 defaults write com.apple.menuextra.clock "DateFormat" -string "\"HH:mm\""
+
+
+###############################################################################
+# Safari, & WebKit                                                            #
+###############################################################################
+
+# Privacy: Don't send search queries to Apple
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+
+# Hiding Safari's sidebar in Top Sites
+defaults write com.apple.Safari ShowSidebarInTopSites -bool false
+
+# Enabling Safari's debug menu
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# Making Safari's search banners default to Contains instead of Starts With
+defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+
+# Removing useless icons from Safari's bookmarks bar
+defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+
+# Enabling the Develop menu and the Web Inspector in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+
+# Adding a context menu item for showing the Web Inspector in web views
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
