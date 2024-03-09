@@ -27,7 +27,7 @@ link_mac:
 	ln -s ~/Git/dotfiles/macos/.hushlogin ~
 
 mac_setup:
-	xcode-select --install
+	-xcode-select --install
 	./macos/macos_setup.sh
 	./macos/install_brew.sh
 	brew install zsh
