@@ -1,5 +1,5 @@
 .DS_Store
-.vim/bundle
-.vim/undodir
+home/.vim/bundle
+home/.vim/undodir
 Brewfile.lock.json
 Caskfile.lock.json

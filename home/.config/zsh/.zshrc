@@ -1,13 +1,30 @@
-ZDOTDIR=~/.zsh
+
+ZDOTDIR=~/.config/zsh
 
 setopt auto_cd
 setopt no_case_glob
 setopt glob_complete
 
-setopt correct
-setopt correct_all
+# setopt correct
+# setopt correct_all
 
 setopt completeinword # not just at the end
+
+# --------
+# Comp init
+# --------
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle :compinstall filename '/home/georgi/.config/zsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Load bashcompinit for some old bash completions
+autoload bashcompinit && bashcompinit
 
 
 # --------
@@ -39,15 +56,18 @@ fpath+=~/Git/dotfiles/functions
 autoload extract
 
 
+echo "ATTEMPTING TO LOAD"
 [ -f $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.aliases.local ] && source ~/.aliases.local
+[ -f ~/.config/.aliases ] && source ~/.config/.aliases
+[ -f ~/.config/.aliases.local ] && source ~/.config/.aliases.local
 
 
 # --------
 # Plugins
 # --------
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if type brew >/dev/null 2>&1; then
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 source "$ZDOTDIR/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 
@@ -64,14 +84,6 @@ source "$ZDOTDIR/plugins/zsh-ssh/zsh-ssh.zsh"
 source "$ZDOTDIR/plugins/bd/bd.zsh"
 
 
-# --------
-# Comp init
-# --------
-
-autoload -Uz compinit && compinit -i
-
-# Load bashcompinit for some old bash completions
-autoload bashcompinit && bashcompinit
 
 
 # Prompt
