@@ -2,9 +2,8 @@ linux: link bash_git_prompt tmux vim zsh
 macos: link link_mac mac_setup bash_git_prompt tmux vim zsh brew
 
 link:
+	ln -fs ~/Git/dotfiles/home/.gitconfig ~/.gitconfig
 	ln -fs ~/Git/dotfiles/home/.config/bash ~/.config/
-	mkdir -p ~/.config/git
-	ln -fs ~/Git/dotfiles/home/.config/git/.gitconfig ~/.config/git/.gitconfig
 	ln -fs ~/Git/dotfiles/home/.config/.aliases ~/.config/
 	ln -fs ~/Git/dotfiles/home/.bashrc ~/
 
