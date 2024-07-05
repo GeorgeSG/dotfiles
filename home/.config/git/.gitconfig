@@ -1,6 +1,6 @@
 # local user config, usernames, etc
 [include]
-    path=~/.gitconfig.local
+    path=~/.config/git/.gitconfig.local
 [color]
     diff = auto
     status = auto

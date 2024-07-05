@@ -2,25 +2,12 @@ linux: link bash_git_prompt tmux vim zsh
 macos: link link_mac mac_setup bash_git_prompt tmux vim zsh brew
 
 link:
-	-rm ~/.aliases
-	-rm ~/.bash_profile
-	-rm ~/.bashrc
-	-rm ~/.git-completion.bash
-	-rm ~/.gitconfig
-	-rm ~/.tmux.conf
-	-rm ~/.zsh/.zprompt
-	-rm ~/.zsh/.zshrc
-	-rm ~/.zshenv
-	mkdir -p ~/.zsh
-	ln -s ~/Git/dotfiles/git/.git-completion.bash ~
-	ln -s ~/Git/dotfiles/git/.gitconfig ~
-	ln -s ~/Git/dotfiles/shell/.aliases ~
-	ln -s ~/Git/dotfiles/shell/.bashrc ~
-	ln -s ~/Git/dotfiles/shell/.bash_profile ~
-	ln -s ~/Git/dotfiles/shell/.zprompt ~/.zsh/
-	ln -s ~/Git/dotfiles/shell/.zshrc ~/.zsh/
-	ln -s ~/Git/dotfiles/shell/.zshenv ~
-	ln -s ~/Git/dotfiles/tmux/.tmux.conf ~
+	ln -fs ~/Git/dotfiles/home/.config/bash ~/.config/
+	mkdir -p ~/.config/git
+	ln -fs ~/Git/dotfiles/home/.config/git/.gitconfig ~/.config/git/.gitconfig
+	ln -fs ~/Git/dotfiles/home/.config/.aliases ~/.config/
+	ln -fs ~/Git/dotfiles/home/.bashrc ~/
+
 
 link_mac:
 	-rm ~/.hushlogin
@@ -41,28 +28,32 @@ cask_personal:
 	brew bundle --file ./macos/Caskfile.personal
 
 tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	-rm ~/.tmux/themes
-	ln -s ~/Git/dotfiles/tmux/themes ~/.tmux/themes
+	ln -fs ~/Git/dotfiles/home/.tmux.conf ~/
+	mkdir -p ~/.config/tmux
+	ln -fs ~/Git/dotfiles/home/.config/tmux/themes ~/.config/tmux/themes
+	-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 bash_git_prompt:
-	-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-	-rm ~/.git-prompt-colors
-	-ln -s ~/Git/dotfiles/git/.git-prompt-colors.sh ~
+	-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.config/bash/bash-git-prompt --depth=1
 
 vim:
 	-rm ~/.vim
 	-rm ~/.vimrc
-	ln -s ~/Git/dotfiles/.vim ~
-	ln -s ~/Git/dotfiles/.vimrc ~
+	ln -fs ~/Git/dotfiles/home/.vim ~
+	ln -fs ~/Git/dotfiles/home/.vimrc ~
 	-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 zsh:
-	mkdir -p ~/.zsh/plugins
-	-git clone git@github.com:zsh-git-prompt/zsh-git-prompt.git ~/.zsh/plugins/zsh-git-prompt
-	-git clone git@github.com:arzzen/calc.plugin.zsh.git ~/.zsh/plugins/calc.plugin.zsh
-	-git clone git@github.com:softmoth/zsh-vim-mode.git ~/.zsh/plugins/zsh-vim-mode
-	-git clone https://github.com/lukechilds/zsh-better-npm-completion.git ~/.zsh/plugins/.zsh-better-npm-completion
-	-git clone https://github.com/sunlei/zsh-ssh ~/.zsh/plugins/zsh-ssh
-	mkdir -p ~/.zsh/plugins/bd
-	curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.zsh/plugins/bd/bd.zsh
+	ln -fs ~/Git/dotfiles/home/.zshenv ~/
+	mkdir -p ~/.config/zsh
+	ln -fs ~/Git/dotfiles/home/.config/zsh/.zprompt ~/.config/zsh/.zprompt
+	ln -fs ~/Git/dotfiles/home/.config/zsh/.zshrc ~/.config/zsh/.zshrc
+
+	mkdir -p ~/.config/zsh/plugins
+	-git clone git@github.com:zsh-git-prompt/zsh-git-prompt.git ~/.config/zsh/plugins/zsh-git-prompt
+	-git clone git@github.com:arzzen/calc.plugin.zsh.git ~/.config/zsh/plugins/calc.plugin.zsh
+	-git clone git@github.com:softmoth/zsh-vim-mode.git ~/.config/zsh/plugins/zsh-vim-mode
+	-git clone https://github.com/lukechilds/zsh-better-npm-completion.git ~/.config/zsh/plugins/.zsh-better-npm-completion
+	-git clone https://github.com/sunlei/zsh-ssh ~/.config/zsh/plugins/zsh-ssh
+	mkdir -p ~/.config/zsh/plugins/bd
+	curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.config/zsh/plugins/bd/bd.zsh

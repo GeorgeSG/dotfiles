@@ -16,7 +16,7 @@ alias l='ls -CFG'
 # fi;
 
 # eza aliases, if available
-if test $(which eza); then
+if type ls >/dev/null 2>&1; then
   eza_params=(
     '--git' '--icons' '--group' '--group-directories-first'
     '--time-style=relative'
@@ -84,8 +84,8 @@ alias dps="docker ps"
 alias dl="docker logs"
 
 # Editing files
-alias aliases="code ~/.aliases"
-alias laliases="code ~/.aliases.local"
+alias aliases="code ~/.config/aliases"
+alias laliases="code ~/.config/aliases.local"
 alias zshrc="code $ZDOTDIR/.zshrc"
 alias lzshrc="code $ZDOTDIR/.zshrc.local"
 alias vimrc="vim ~/.vimrc"

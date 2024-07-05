@@ -65,22 +65,22 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Sources & exports  #
 ######################
 
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
+if [ -f ~/.config/.aliases ]; then
+  source ~/.config/.aliases
 fi
 
-if [ -f ~/.aliases.local ]; then
-    . ~/.aliases.local
+if [ -f ~/.config/.aliases.local ]; then
+    . ~/.config/.aliases.local
 fi
 
 
-if [ -f ~/.bash_profile.local ]; then
-  source ~/.bash_profile.local
+if [ -f ~/.config/bash/.bash_profile.local ]; then
+  source ~/.config/bash/.bash_profile.local
 fi
 
 # bash-git prompt
-if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
-  source ~/.bash-git-prompt/gitprompt.sh
+if [ -f ~/.config/bash/bash-git-prompt/gitprompt.sh ]; then
+  source ~/.config/bash/bash-git-prompt/gitprompt.sh
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -91,6 +91,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Git completion
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
+if [ -f ~/.config/bash/git-completion.bash ]; then
+  source ~/.config/bash/git-completion.bash
 fi
