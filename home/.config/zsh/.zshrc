@@ -55,12 +55,9 @@ setopt no_beep            # Don't beep on command input error
 fpath+=~/Git/dotfiles/functions
 autoload extract
 
-
-echo "ATTEMPTING TO LOAD"
 [ -f $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
 [ -f ~/.config/.aliases ] && source ~/.config/.aliases
 [ -f ~/.config/.aliases.local ] && source ~/.config/.aliases.local
-
 
 # --------
 # Plugins
