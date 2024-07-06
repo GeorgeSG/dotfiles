@@ -11,10 +11,6 @@ alias ll='ls -alhFG'
 alias la='ls -AG'
 alias l='ls -CFG'
 
-# if test $(which zoxide); then
-#   alias cd="z"
-# fi;
-
 # eza aliases, if available
 if type ls >/dev/null 2>&1; then
   eza_params=(
@@ -107,4 +103,21 @@ alias yda="youtube-dl -x --audio-format mp3"
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 
 ##### Mac OS Specific #####
-alias fl="open -a ForkLift"
+if [ "$(uname)" = "Darwin" ]; then
+  alias fl="open -a ForkLift"
+fi
+
+if type systemctl >/dev/null 2>&1; then
+  alias ssc="sudo systemctl"
+  alias sc="systemctl"
+  alias scs="systemctl status"
+  alias scst="systemctl start"
+fi
+
+if type dust >/dev/null 2>&1; then
+  alias du="dust"
+fi
+
+if type bat >/dev/null 2>&1; then
+  alias cat="bat"
+fi
