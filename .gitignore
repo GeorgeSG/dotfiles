@@ -4,3 +4,8 @@ home/.vim/undodir
 home/.config/bash/bash-git-prompt
 Brewfile.lock.json
 Caskfile.lock.json
+
+home/.config/alacritty/themes
+
+__pycache__
+*.pyc
