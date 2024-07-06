@@ -60,7 +60,7 @@ zsh:
 
 ### Arch / Hyprland
 hyprach:
-	ln -fs ~/Git/dotfiles/home/.config/alacrity ~/.config/
+	ln -fs ~/Git/dotfiles/home/.config/alacritty/ ~/.config/
 	mkdir -p ~/.config/alacritty/themes
 	-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
