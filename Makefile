@@ -56,3 +56,12 @@ zsh:
 	-git clone https://github.com/sunlei/zsh-ssh ~/.config/zsh/plugins/zsh-ssh
 	mkdir -p ~/.config/zsh/plugins/bd
 	curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.config/zsh/plugins/bd/bd.zsh
+
+
+### Arch / Hyprland
+hyprach:
+	ln -fs ~/Git/dotfiles/home/.config/alacrity ~/.config/
+	ln -fs ~/Git/dotfiles/home/.config/btop ~/.config/
+	ln -fs ~/Git/dotfiles/home/.config/eww ~/.config/
+	ln -fs ~/Git/dotfiles/home/.config/hypr ~/.config/
+	ln -fs ~/Git/dotfiles/home/.config/rofi ~/.config/

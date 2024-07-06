@@ -1,0 +1,7 @@
+(deflisten window :initial "..." "sh ./widgets/active-window/get-active-window.sh")
+
+(defwidget active-window []
+  (box
+    (label :class "box" :text "${window}")
+  )
+)

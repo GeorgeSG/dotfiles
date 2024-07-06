@@ -1,0 +1,13 @@
+(deflisten active-workspace :initial "." "sh widgets/workspaces/get-active-workspace.sh")
+
+(defwidget workspaces [?monitor-workspaces]
+  (box :class "workspaces"
+    :orientation "h"
+    :space-evenly true
+    :halign "start"
+    :spacing 10
+    (for workspace in monitor-workspaces
+      (button :class "workspace ${active-workspace == workspace ? "current" : ""}" :onclick "hyprctl dispatch workspace ${workspace}" "${workspace}")
+    )
+  )
+)
