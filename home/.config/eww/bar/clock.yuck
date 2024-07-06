@@ -1,0 +1,30 @@
+(defpoll date-time :interval "5s" "./lib/date-time.sh")
+
+(defwidget date []
+  (box :class "date"
+    "${date-time.date}"
+  )
+)
+
+(defwidget day []
+  (box :class "day"
+    "${date-time.day}"
+  )
+)
+
+(defwidget time []
+  (box :class "time"
+    "${date-time.time}"
+  )
+)
+
+(defwidget clock []
+  (box :class "clock"
+    :orientation "h"
+    :space-evenly false
+    :valign "center"
+    (date)
+    (day)
+    (time)
+  )
+)

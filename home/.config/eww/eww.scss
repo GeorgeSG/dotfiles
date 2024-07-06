@@ -1,47 +1,46 @@
 * {
   all: unset;
+  font-family: "SF Pro Light";
 }
 
-.bar {
-  font-family: "FiraCode Nerd Fonot";
-  border-radius: 8px;
-}
+$bg: rgba(0, 0, 0, 0.5);
+$fg: #dedede;
+$menu-border: rgba(255, 255, 255, 0.1);
+$bar-gap: 8px;
 
-
-.interactive, .workspace {
+.interactive {
   border-radius: 4px;
   margin: 4px 0;
   transition: background-color 0.4s ease;
+
+  &:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
 .workspace {
   padding: 0 8px;
-}
 
-.workspace.current {
-  background-color: #fff;
-  color: #000;
-  font-weight: bold;
-}
-
-.interactive:not(.active):hover,
-.workspace:not(.current):hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  &.active {
+    background-color: $fg;
+    color: $bg;
+    font-weight: bold;
+  }
 }
 
 .box {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: $bg;
   border-radius: 8px;
-  padding-left: 8px;
-  padding-right: 12px;
+  padding: 0 calc($bar-gap * 1.5);
+  color: $fg;
 }
 
 .right > :not(:first-child) {
-  margin-left: 8px;
+  margin-left: $bar-gap;
 }
 
 .audio-source {
-  margin-top: 6px;
+  padding-top: 2px;
   padding-left: 8px;
   padding-right: 12px;
 }
@@ -57,40 +56,135 @@
 
 .kbd-layout {
   padding: 0 8px;
-}
-
-.control-centre {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 16px 32px;
-
+  border-radius: 4px;
 }
 
 .media-status {
-  padding-right: 8px;
+  padding-right: 10px;
   padding-left: 8px;
 }
 
-.media-window {
-  .media-cover {
-    border-radius: 8px;
-    border: 2px solid #fff;
-    background-size: contain;
+.control-centre {
+  background-color: $bg;
+  border: 3px solid $menu-border;
 
-  }
+  border-radius: 8px;
+  padding: 16px 48px;
 
-  .media-controls {
-    margin-top: 16px;
-  }
+  .media-window {
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    };
 
-  .media-button {
-    border-radius: 8px;
-    padding: 32px 0;
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: background-color 0.4s ease;
+    .album {
+      font-size: 13px;
+      color: #aaa
+    }
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+    .media-cover {
+      margin-top: 12px;
+      border-radius: 16px;
+      border: 2px solid $menu-border;
+    }
+
+    .media-controls {
+      margin-top: 16px;
+    }
+
+    .media-button {
+      padding: 8px 13px;
+      border-radius: 100%;
+      border: 2px solid $menu-border;
+      transition: all 0.4s ease;
+
+      &.shuffle {
+        padding-left: 10px;
+        padding-right: 16px;
+
+        &.active {
+          background-color: $fg;
+          color: $bg;
+        }
+      }
+
+      &.loop {
+        padding-left: 12px;
+        padding-right: 14px;
+
+        &.active {
+          background-color: $fg;
+          color: $bg;
+        }
+      }
+
+      &.pause {
+        background-color: $fg;
+        color: $bg;
+      }
+
+      &:hover {
+        background-color: $fg;
+        border-color: $fg;
+        color: $bg;
+      }
     }
   }
 
+}
+
+
+.power-menu {
+  background-color: $bg;
+  border: 3px solid $menu-border;
+  border-radius: 32px;
+
+  .power-menu-item {
+    font-size: 44px;
+    background-color: $bg;
+    border-radius: 20px;
+    border: 1px solid $menu-border;
+    margin: 16px 0;
+    margin-right: 16px;
+    padding-right: 4px; /* this makes sure icons from nerd font are centered */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    color: $fg;
+
+    &:hover {
+      background-color: $fg;
+      color: $bg;
+    }
+
+    &.first {
+      margin-left: 16px;
+    }
+  }
+}
+
+.power-button {
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.clock {
+  margin-right: 8px;
+
+  .date {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: 6px 0;
+    font-size: 12px;
+  }
+
+  .day {
+    margin-left: 6px;
+  }
+
+  .time {
+    margin-left: 8px;
+  }
 }

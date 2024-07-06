@@ -3,6 +3,7 @@
     :orientation "h"
     :space-evenly false
     :halign "center"
+    :class "interactive"
     (eventbox :cursor "pointer" :class "interactive" :onclick "hyprctl switchxkblayout usb-hid-keyboard next"
       (label :text {keyboard-layout} :class "kbd-layout")
     )

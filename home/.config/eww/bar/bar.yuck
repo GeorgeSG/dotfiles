@@ -1,0 +1,49 @@
+
+
+(include "./bar/active-window.yuck")
+(include "./bar/audio.yuck")
+; (include "./bar/brightness.yuck")
+(include "./bar/clock.yuck")
+(include "./bar/kbd-layout.yuck")
+(include "./bar/media.yuck")
+(include "./bar/workspaces.yuck")
+
+(defwidget right []
+  (box :class "box right"
+    :orientation "h"
+    :halign "end"
+    :space-evenly false
+    (systray :hexpand true :class "systray" :icon-size 18 :spacing 4)
+    (kbd-layout)
+    (audio)
+    (media)
+    ; (brightness)
+    (clock)
+    (eventbox :cursor "pointer"
+      (button :class "power-button interactive"  :onclick "eww open --toggle power-menu" "󰐥")
+    )
+  )
+)
+
+(defwidget bar [monitor-workspaces]
+  (box :class "bar" :orientation "h"
+    (workspaces :monitor-workspaces monitor-workspaces)
+    (active-window)
+    (right)
+  )
+)
+
+(defwindow bar [monitor monitor-workspaces]
+  :monitor monitor
+  :geometry (geometry :x "0%"
+    :y "4px"
+    :width "99.7%"
+    :height "32px"
+    :anchor "top center"
+  )
+  :exclusive true
+  :windowtype "dock"
+  :wm-ignore false
+  :focusable false
+  (bar :monitor-workspaces monitor-workspaces)
+)
