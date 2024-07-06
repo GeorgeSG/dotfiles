@@ -1,0 +1,23 @@
+import = [
+    "~/.config/alacritty/themes/themes/tomorrow_night_bright.toml"
+]
+
+shell = '/bin/zsh'
+
+[window]
+padding = { x = 16, y = 8 }
+dynamic_title = true
+opacity = 0.6
+blur = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+normal = { family = "CaskaydiaMono Nerd Font" }
+size = 12
+offset = { y = 1 }
+
+[cursor]
+style = { shape = "Beam", blinking = "Always" }

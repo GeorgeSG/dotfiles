@@ -1,0 +1,24 @@
+(defpoll volume-level :interval "1s" "sh widgets/audio/get-volume-level.sh")
+
+(defwidget icon []
+  (label :text {volume-level > 66 ? "" : volume-level > 0 ? "" : ""})
+)
+
+; TODO figure out the sink IDs dynamically?
+
+(defwidget audio []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    (eventbox :cursor "pointer" (button :class "audio-source interactive"  :onclick "pactl set-default-sink 57" "󰍹"))
+    (eventbox :cursor "pointer" (button :class "audio-source-2 interactive" :onclick "pactl set-default-sink 64" "󰋋"))
+    (eventbox :cursor "pointer" :class "interactive" :onscroll "sh widgets/audio/change-volume.sh {}"
+      (box :class "volume"
+        (icon)
+        (button :onclick "pavucontrol &"
+          (label :text "${volume-level}%")
+        )
+      ))
+  )
+)

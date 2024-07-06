@@ -1,0 +1,12 @@
+(defwidget kbd-layout []
+  (box
+    :orientation "h"
+    :space-evenly false
+    :halign "center"
+    (eventbox :cursor "pointer" :class "interactive" :onclick "hyprctl switchxkblayout usb-hid-keyboard next"
+      (label :text {keyboard-layout} :class "kbd-layout")
+    )
+  )
+)
+
+(deflisten keyboard-layout :initial "en" "python ./lib/get-kb-layout.py")

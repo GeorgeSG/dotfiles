@@ -1,0 +1,50 @@
+(defpoll media-status :interval "1s" "playerctl status")
+
+
+(defpoll media-artist :interval "1s" "playerctl metadata --format \"{{artist}}\"")
+(defpoll media-title :interval "1s" "playerctl metadata --format \"{{title}}\"")
+(defpoll media-album :interval "1s" "playerctl metadata --format \"{{album}}\"")
+(defpoll media-artUrl :interval "1s" "playerctl metadata --format \"{{mpris:artUrl}}\"")
+(defpoll media-length :interval "1s" "playerctl metadata --format \"{{duration(mpris:length)}}\"")
+
+
+(defwidget media []
+  (box
+    (eventbox :cursor "pointer" :onclick "eww open --toggle window_media" :class "interactive" :onmiddleclick "playerctl play-pause"
+      (box :class "media-status"
+        (label :text "${media-status == "Playing" ? "" : media-status == "Paused" ? "" : ""}")
+      )
+    )
+
+  )
+)
+
+(defwidget media_full []
+  (box :orientation "v"  :space-evenly false :class "media-window"
+    (label :text media-artist :show-truncated false)
+    (label :text media-title :show-truncated false)
+    (label :text media-album :show-truncated false)
+    (box :class "media-cover" :style "background: url('${media-artUrl}')" :width 180 :height 140)
+    (box :class "media-controls" :spacing 16
+      (eventbox :cursor "pointer" :onclick "playerctl previous" :class "media-button" "")
+      (eventbox :cursor "pointer" :class "media-button play" :onclick "playerctl play" "")
+      (eventbox :cursor "pointer" :class "media-button pause" :onclick "playerctl pause" "")
+      (eventbox :cursor "pointer" :class "media-button next" :onclick "playerctl next" "")
+    )
+  )
+)
+
+
+(defwindow window_media
+  :monitor 0
+  :geometry (geometry :x "8px"
+    :y "8px"
+    :width "300px"
+    :anchor "top right"
+  )
+  :wm-ignore false
+  :focusable false
+  (box :class "control-centre bar"
+    (media_full)
+  )
+)

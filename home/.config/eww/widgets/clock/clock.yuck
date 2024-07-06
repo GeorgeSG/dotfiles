@@ -1,0 +1,10 @@
+(defwidget clock []
+  (box :class "clock"
+    :orientation "h"
+    :space-evenly false
+    :halign "center"
+  date-time)
+)
+
+(defpoll date-time :interval "1s"
+"sh widgets/clock/date-time.sh")
