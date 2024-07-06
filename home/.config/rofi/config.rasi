@@ -1,7 +1,11 @@
 configuration {
-	/* modes: "window,drun,run,ssh"; */
-  font: "Fira Code 12";
+  font: "Fira Code 10";
 	show-icons: true;
+  display-combi:  "";
+  dpi: 120;
+  hover-select: true;
+/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+/* modes: "window,drun,run,ssh"; */
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -18,7 +22,6 @@ configuration {
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
-/*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
 /*	drun-url-launcher: "xdg-open";*/
 /*	disable-history: false;*/
 /*	ignored-prefixes: "";*/
@@ -27,7 +30,6 @@ configuration {
 /*	case-sensitive: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
-	hover-select: true;
 /*	eh: 1;*/
 /*	auto-select: false;*/
 /*	parse-hosts: false;*/
@@ -188,20 +190,30 @@ configuration {
 }
 window {
     width: 25%;
-    border-radius: 10;
+    border-radius: 8;
     background-color: @background;
     border:           1;
     padding:          16;
+}
+
+
+textbox-prompt-colon {
+  display: none;
+  str: "";
 }
 
 mainbox {
   border: 0;
 }
 
+listview {
+  padding: 16px 0;
+}
+
 element {
-  padding: 8px 16px;
+  padding: 12px;
 }
 
 element-icon {
-  padding: 0 20px 0 0;
+  padding: 0 12px 0 0;
 }
