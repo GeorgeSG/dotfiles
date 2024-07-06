@@ -1,0 +1,65 @@
+(defpoll mediastatus :interval "1s" "./lib/media-status.sh")
+
+(defwidget media []
+    (eventbox :cursor "pointer" :onmiddleclick "playerctl play-pause"
+      (button :class "media-status interactive" :onclick "eww open --toggle media-menu"
+        (label :text "${mediastatus.status == "Playing" ? "" : mediastatus.status == "Paused" ? "" : ""}")
+      )
+    )
+)
+
+(defwidget media_full []
+  (box :orientation "v" :space-evenly false :class "media-window"
+    (label :class "title" :text "${mediastatus.artist} - ${mediastatus.title}" :show-truncated false)
+    (label :class "album" :text "${mediastatus.album}" :show-truncated false)
+    (box :class "media-cover" :style "background: url('${mediastatus.artUrl}'); background-size: cover;" :height 300)
+
+    (box :class "media-controls" :spacing 12 :space-evenly false :halign "center"
+      (eventbox :cursor "pointer"
+        (button :class "media-button" :class "media-button shuffle ${mediastatus.shuffle == "On" ? "active" : ""}" :onclick "playerctl shuffle toggle" "")
+      )
+
+      (eventbox :cursor "pointer"
+        (button :class "media-button" :onclick "playerctl previous"  "")
+      )
+
+      (eventbox :cursor "pointer"
+        (button
+          :class "media-button ${mediastatus.status == "Playing" ? "pause" : "play"}"
+          :onclick "./lib/media-play-pause.sh"
+          "${mediastatus.status == "Playing" ? "" : ""}"
+        )
+      )
+
+      (eventbox :cursor "pointer"
+        (button :class "media-button" :onclick "playerctl next" "")
+      )
+
+       (eventbox :cursor "pointer"
+        (button
+          :class "media-button loop ${mediastatus.loop != "None" ? "active" : ""}"
+          :onclick "playerctl loop ${mediastatus.loop == "Playlist" ? "track" : mediastatus.loop == "Track" ? "none" : "playlist"}"
+          "${mediastatus.loop == "Track" ? "󰑘" : "󰑖"}"
+        )
+
+      )
+
+    )
+  )
+)
+
+(defwindow media-menu
+  :monitor 0
+  :namespace "media-menu"
+  :stacking "overlay"
+  :geometry (geometry :x "8px"
+    :y "8px"
+    :width "400px"
+    :anchor "top right"
+  )
+  :wm-ignore false
+  :focusable false
+  (box :class "control-centre"
+    (media_full)
+  )
+)

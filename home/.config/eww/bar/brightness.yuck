@@ -3,7 +3,7 @@
 (defpoll brightness-1 :interval "2s" "ddcutil -d 1 getvcp 10 | awk '{ split($9, a, \",\"); print a[1]}'")
 
 (defwidget brightness []
-  (eventbox :onscroll "sh widgets/brightness/change-brightness.sh {} ${brightness-1 + 0}"
+  (eventbox :onscroll "./lib/change-brightness.sh {} ${brightness-1 + 0}"
     (label :text "󰃞  ${substring(brightness-1, 0, 2)}")
   )
 )

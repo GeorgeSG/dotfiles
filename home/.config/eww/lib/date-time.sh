@@ -9,5 +9,8 @@ DaySuffix() {
   esac
 }
 
-date=$(date "+%a, %b %-d`DaySuffix` · %H:%M")
-printf "%s" "$date"
+day=$(date "+%a")
+date=$(date "+%-d")
+time=$(date "+%H:%M")
+
+echo "{\"date\": \"$date\", \"day\": \"$day\", \"time\": \"$time\"}"
