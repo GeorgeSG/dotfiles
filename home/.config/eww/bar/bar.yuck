@@ -4,6 +4,7 @@
 (include "./bar/kbd-layout.yuck")
 (include "./bar/media.yuck")
 (include "./bar/power.yuck")
+(include "./bar/updates.yuck")
 (include "./bar/weather.yuck")
 (include "./bar/workspaces.yuck")
 
@@ -26,7 +27,11 @@
   (box :class "bar" :orientation "h"
     (workspaces :monitor-workspaces monitor-workspaces)
     (active-window)
-    (bar-tray)
+
+    (box :orientation "h" :halign "end" :space-evenly false :spacing 8
+    (pacman-updates-widget)
+      (bar-tray)
+    )
   )
 )
 
