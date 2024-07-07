@@ -1,27 +1,24 @@
-
-
-(include "./bar/active-window.yuck")
-(include "./bar/audio.yuck")
 ; (include "./bar/brightness.yuck")
+(include "./bar/active-window.yuck")
 (include "./bar/clock.yuck")
 (include "./bar/kbd-layout.yuck")
 (include "./bar/media.yuck")
+(include "./bar/power.yuck")
+(include "./bar/weather.yuck")
 (include "./bar/workspaces.yuck")
 
-(defwidget right []
-  (box :class "box right"
+(defwidget bar-tray []
+  (box :class "bar-group"
     :orientation "h"
     :halign "end"
     :space-evenly false
     (systray :hexpand true :class "systray" :icon-size 18 :spacing 4)
-    (kbd-layout)
-    (audio)
-    (media)
+    (kbd-layout-tray-item)
+    (media-tray-item)
     ; (brightness)
-    (clock)
-    (eventbox :cursor "pointer"
-      (button :class "power-button interactive"  :onclick "eww open --toggle power-menu" "󰐥")
-    )
+    (weather-tray-item)
+    (clock-tray-item)
+    (power-tray-item)
   )
 )
 
@@ -29,7 +26,7 @@
   (box :class "bar" :orientation "h"
     (workspaces :monitor-workspaces monitor-workspaces)
     (active-window)
-    (right)
+    (bar-tray)
   )
 )
 

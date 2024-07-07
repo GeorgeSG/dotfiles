@@ -1,0 +1,31 @@
+(defwidget power-tray-item []
+  (eventbox :cursor "pointer"
+    (button :class "power-button-tray-item interactive"  :onclick "eww open --toggle power-menu" "󰐥")
+  )
+)
+
+(defwindow power-menu
+  :namespace "power-menu"
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry :x "50%"
+    :y "50%"
+    :width "30%"
+    :height "200px"
+    :anchor "center"
+  )
+  (box :class "power-menu" :orientation "h"
+    (eventbox :cursor "pointer"
+      (button :class "power-menu-item first" :onclick "eww open --toggle power-menu & ./lib/lock.sh" "")
+    )
+    (eventbox :cursor "pointer"
+      (button :class "power-menu-item" :onclick "eww open --toggle power-menu & ./lib/logout.sh" "󰈆")
+    )
+    (eventbox :cursor "pointer"
+      (button :class "power-menu-item" :onclick "eww open --toggle power-menu & ./lib/reboot.sh" "")
+    )
+    (eventbox :cursor "pointer"
+      (button :class "power-menu-item" :onclick "eww open --toggle power-menu & ./lib/shutdown.sh" "")
+    )
+  )
+)

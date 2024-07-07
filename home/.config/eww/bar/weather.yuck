@@ -1,0 +1,14 @@
+(deflisten weather :initial "{'temp': 'n/a', 'desc': 'n/a'}" "./lib/weather.py")
+
+(defwidget weather-tray-item []
+  (box :class "weather-tray-item"
+    :orientation "h"
+    :space-evenly false
+    (eventbox :cursor "pointer" :class "interactive weather" :onclick "xdg-open https://sinoptik.bg"
+      (box :space-evenly false
+        (label :class "weather-temp" :text "${weather.icon}  ${weather.temp}")
+        (label :class "weather-desc" :text "${weather.desc}")
+      )
+    )
+  )
+)
