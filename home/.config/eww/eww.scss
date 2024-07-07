@@ -11,7 +11,37 @@ $bar-gap: 8px;
 
 @import "./styles/media-menu.scss";
 @import "./styles/power-menu.scss";
+@import "./styles/updates-menu.scss";
 @import "./styles/tray.scss";
+
+.systray menu {
+  font-family: $font;
+	border-radius: 10px;
+  background-color: rgba(30, 30, 30);
+  color: $fg;
+	padding: 5px 0px;
+
+	> menuitem {
+		padding: 5px 10px;
+
+		&:disabled label {
+			color: gray;
+		}
+
+		&:hover {
+			background-color: #0e4679;
+		}
+	}
+
+	separator {
+		background-color: rgb(60, 60, 60);
+		padding-top: 1px;
+
+		&:last-child {
+			padding: unset;
+		}
+	}
+}
 
 
 .eww-overlay {

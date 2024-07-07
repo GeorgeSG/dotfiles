@@ -1,4 +1,5 @@
-(defpoll pacman-updates :initial 0 :interval "3s" "checkupdates | wc -l")
+(defpoll pacman-updates :initial 0 :interval "60s" "checkupdates | wc -l")
+(defpoll pacman-updates-full :interval "60s" "checkupdates")
 
 (defwidget pacman-updates-widget []
   (box :class "pacman-update-widget"
@@ -6,8 +7,29 @@
       :class "pacman-update-widget-inner ${pacman-updates > 0 ? 'has-updates' : ''}"
       :cursor "pointer"
       :onclick "${pacman-updates > 0 ? 'alacritty -e sudo pacman -Syu &' : ''}"
+      :onmiddleclick "eww open --toggle updates-menu"
 
       (label :class "update-text" :text "   ${pacman-updates}")
+    )
+  )
+)
+
+(defwindow updates-menu
+  :namespace "updates-menu"
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry :x "50%"
+    :y "40%"
+    :width "400px"
+    :height "200px"
+    :anchor "center"
+  )
+
+  (box :class "updates-menu" :orientation "v" :space-evenly true
+    (label :class "pacman-updates-menu-title" :text "Pacman Updates:    ${pacman-updates}")
+    (label :text "${pacman-updates-full}")
+    (eventbox :cursor "pointer" :class "interactive"
+      (button :class "btn" :onclick "alacritty -e sudo pacman -Syu &" "Update")
     )
   )
 )
