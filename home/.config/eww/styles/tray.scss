@@ -1,5 +1,29 @@
 $tray-item-interactive-margin: 6px 0;
 
+.pacman-update-widget {
+  margin: $tray-item-interactive-margin;
+
+  .pacman-update-widget-inner {
+    border-radius: 4px;
+
+
+    &.has-updates {
+      background-color: rgb(228, 137, 137);
+      color: #fff;
+      font-weight: bold;
+      transition: background-color 0.4s ease;
+
+      &:hover {
+        background-color: rgb(187, 100, 100);
+      }
+
+      .update-text {
+        padding: 0 8px;
+      }
+    }
+  }
+}
+
 .kbd-layout-tray-item {
   margin: $tray-item-interactive-margin;
 

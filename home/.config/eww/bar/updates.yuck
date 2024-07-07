@@ -1,0 +1,13 @@
+(defpoll pacman-updates :initial 0 :interval "3s" "checkupdates | wc -l")
+
+(defwidget pacman-updates-widget []
+  (box :class "pacman-update-widget"
+    (eventbox
+      :class "pacman-update-widget-inner ${pacman-updates > 0 ? 'has-updates' : ''}"
+      :cursor "pointer"
+      :onclick "${pacman-updates > 0 ? 'alacritty -e sudo pacman -Syu &' : ''}"
+
+      (label :class "update-text" :text "   ${pacman-updates}")
+    )
+  )
+)
