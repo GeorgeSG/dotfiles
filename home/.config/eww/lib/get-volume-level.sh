@@ -12,7 +12,10 @@ fi
 
 
 if [[ $volume_value =~ ^" 1" ]]; then
-  echo "${volume_value//.}"
+  # starts with a space - trim
+  trimmed=$( echo $volume_value | cut -c1-  )
+
+  echo "${trimmed//.}"
   exit 0
 fi
 

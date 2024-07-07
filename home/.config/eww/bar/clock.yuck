@@ -18,8 +18,8 @@
   )
 )
 
-(defwidget clock []
-  (box :class "clock"
+(defwidget clock-tray-item []
+  (box :class "clock-tray-item"
     :orientation "h"
     :space-evenly false
     :valign "center"

@@ -1,5 +1,3 @@
-
-(include "./power-menu/power-menu.yuck")
 (include "./bar/bar.yuck")
 
 ; a hacky solution for moving the windows on my second monitor a bit up so I can see them :D

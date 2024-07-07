@@ -1,0 +1,78 @@
+
+.media-menu {
+  .audio-source-selector {
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    .title {
+      border-bottom: 1px solid $fg;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+
+    .audio-source {
+      padding-left: 10px;
+      padding-right: 15px;
+    }
+  }
+
+  .media-player {
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .album {
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .media-cover {
+      margin-top: 12px;
+      border-radius: 16px;
+      border: 2px solid $menu-border;
+    }
+
+    .media-controls {
+      margin-top: 16px;
+    }
+
+    .media-button {
+      padding: 8px 13px;
+      border-radius: 100%;
+      border: 2px solid $menu-border;
+      transition: all 0.4s ease;
+
+      &.shuffle {
+        padding-left: 10px;
+        padding-right: 16px;
+
+        &.active {
+          background-color: $fg;
+          color: $bg;
+        }
+      }
+
+      &.loop {
+        padding-left: 12px;
+        padding-right: 14px;
+
+        &.active {
+          background-color: $fg;
+          color: $bg;
+        }
+      }
+
+      &.pause {
+        background-color: $fg;
+        color: $bg;
+      }
+
+      &:hover {
+        background-color: $fg;
+        border-color: $fg;
+        color: $bg;
+      }
+    }
+  }
+}

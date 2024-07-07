@@ -1,0 +1,65 @@
+$tray-item-interactive-margin: 6px 0;
+
+.kbd-layout-tray-item {
+  margin: $tray-item-interactive-margin;
+
+  .kbd-layout {
+    padding: 0 8px;
+    border-radius: 4px;
+  }
+}
+
+.media-tray-item {
+  margin: $tray-item-interactive-margin;
+
+  .volume-tray-icon {
+    padding-right: 6px;
+
+    .volume-icon {
+      padding-right: 6px;
+    }
+  }
+}
+
+.clock-tray-item {
+  margin-right: 8px;
+
+  .date {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+
+  .day {
+    margin-left: 6px;
+  }
+
+  .time {
+    margin-left: 4px;
+  }
+}
+
+.weather-tray-item {
+  margin: $tray-item-interactive-margin;
+
+  .weather-temp {
+    padding-left: 8px;
+  }
+
+  .weather-desc {
+    padding-left: 4px;
+    padding-right: 8px;
+  }
+}
+
+.power-button-tray-item {
+  margin: $tray-item-interactive-margin;
+
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: 4px;
+  font-size: 18px;
+}

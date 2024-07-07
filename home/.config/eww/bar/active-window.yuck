@@ -3,6 +3,6 @@
 (defwidget active-window []
   (box
     :halign "center"
-    (label :class "box" :text "${window?: 'none'}")
+    (label :class "bar-group" :text "${window?: 'none'}")
   )
 )

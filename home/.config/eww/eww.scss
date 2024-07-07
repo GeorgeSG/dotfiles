@@ -1,21 +1,60 @@
-* {
-  all: unset;
-  font-family: "SF Pro Light";
-}
-
+$font: "SF Pro Light";
 $bg: rgba(0, 0, 0, 0.5);
 $fg: #dedede;
 $menu-border: rgba(255, 255, 255, 0.1);
 $bar-gap: 8px;
 
+* {
+  all: unset;
+  font-family: $font;
+}
+
+@import "./styles/media-menu.scss";
+@import "./styles/power-menu.scss";
+@import "./styles/tray.scss";
+
+
+.eww-overlay {
+  background-color: $bg;
+  border: 3px solid $menu-border;
+
+  border-radius: 8px;
+  padding: 16px 48px;
+}
+
+.bar-group {
+  background-color: $bg;
+  border-radius: 8px;
+  padding: 0 calc($bar-gap * 1.5);
+  color: $fg;
+
+  > :not(:first-child) {
+    margin-left: $bar-gap;
+  }
+}
+
 .interactive {
   border-radius: 4px;
-  margin: 4px 0;
   transition: background-color 0.4s ease;
+
+  &.active {
+    background-color: $fg;
+    color: $bg;
+    font-weight: bold;
+  }
 
   &:not(.active):hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
+}
+
+.btn {
+  border-radius: 4px;
+  padding: 10px 15px 10px 10px;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .workspace {
@@ -25,166 +64,5 @@ $bar-gap: 8px;
     background-color: $fg;
     color: $bg;
     font-weight: bold;
-  }
-}
-
-.box {
-  background-color: $bg;
-  border-radius: 8px;
-  padding: 0 calc($bar-gap * 1.5);
-  color: $fg;
-}
-
-.right > :not(:first-child) {
-  margin-left: $bar-gap;
-}
-
-.audio-source {
-  padding-top: 2px;
-  padding-left: 8px;
-  padding-right: 12px;
-}
-
-.audio-source-2 {
-  padding-left: 8px;
-  padding-right: 10px;
-}
-
-.volume {
-  padding-right: 6px;
-}
-
-.kbd-layout {
-  padding: 0 8px;
-  border-radius: 4px;
-}
-
-.media-status {
-  padding-right: 10px;
-  padding-left: 8px;
-}
-
-.control-centre {
-  background-color: $bg;
-  border: 3px solid $menu-border;
-
-  border-radius: 8px;
-  padding: 16px 48px;
-
-  .media-window {
-    .title {
-      font-weight: bold;
-      font-size: 15px;
-    };
-
-    .album {
-      font-size: 13px;
-      color: #aaa
-    }
-
-    .media-cover {
-      margin-top: 12px;
-      border-radius: 16px;
-      border: 2px solid $menu-border;
-    }
-
-    .media-controls {
-      margin-top: 16px;
-    }
-
-    .media-button {
-      padding: 8px 13px;
-      border-radius: 100%;
-      border: 2px solid $menu-border;
-      transition: all 0.4s ease;
-
-      &.shuffle {
-        padding-left: 10px;
-        padding-right: 16px;
-
-        &.active {
-          background-color: $fg;
-          color: $bg;
-        }
-      }
-
-      &.loop {
-        padding-left: 12px;
-        padding-right: 14px;
-
-        &.active {
-          background-color: $fg;
-          color: $bg;
-        }
-      }
-
-      &.pause {
-        background-color: $fg;
-        color: $bg;
-      }
-
-      &:hover {
-        background-color: $fg;
-        border-color: $fg;
-        color: $bg;
-      }
-    }
-  }
-
-}
-
-
-.power-menu {
-  background-color: $bg;
-  border: 3px solid $menu-border;
-  border-radius: 32px;
-
-  .power-menu-item {
-    font-size: 44px;
-    background-color: $bg;
-    border-radius: 20px;
-    border: 1px solid $menu-border;
-    margin: 16px 0;
-    margin-right: 16px;
-    padding-right: 4px; /* this makes sure icons from nerd font are centered */
-    transition: background-color 0.4s ease, color 0.4s ease;
-    color: $fg;
-
-    &:hover {
-      background-color: $fg;
-      color: $bg;
-    }
-
-    &.first {
-      margin-left: 16px;
-    }
-  }
-}
-
-.power-button {
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-left: 4px;
-  font-size: 18px;
-}
-
-.clock {
-  margin-right: 8px;
-
-  .date {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid rgba(255, 255, 255, 0.6);
-    padding: 0 8px;
-    border-radius: 4px;
-    margin: 6px 0;
-    font-size: 12px;
-  }
-
-  .day {
-    margin-left: 6px;
-  }
-
-  .time {
-    margin-left: 8px;
   }
 }
