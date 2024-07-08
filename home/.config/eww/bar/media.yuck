@@ -90,7 +90,7 @@
     (audio-source-selector)
 
     (eventbox :cursor "pointer"
-      (button :class "interactive btn" :halign "start" :onclick "pavucontrol &" "󰴸   Open PulseAudio control")
+      (button :class "interactive btn" :halign "start" :onclick "eww open --toggle media-menu & pavucontrol &" "󰴸   Open PulseAudio control")
     )
 
     ; TODO: For some reason audio-info is null if I don't invoke it outside the for. Investigate.x

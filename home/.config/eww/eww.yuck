@@ -1,8 +1,8 @@
 (include "./bar/bar.yuck")
 
 ; a hacky solution for moving the windows on my second monitor a bit up so I can see them :D
-(defwindow monitor-bump
-  :monitor 1
+(defwindow monitor-bump [monitor]
+  :monitor monitor
   :geometry (geometry :x "0" :y "0" :width "100%" :height "120" :anchor "bottom center")
   :exclusive true
   :windowtype "dock"
