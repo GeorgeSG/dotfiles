@@ -302,7 +302,7 @@
   "Blink Allowed" : false,
   "Cursor Type" : 1,
   "Background Image Location" : "",
-  "Blur" : false,
+  "Blur" : true,
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -310,6 +310,7 @@
     "Alpha Component" : 0.5,
     "Green Component" : 0.1491314172744751
   },
+  "Blur Radius" : 37.586153590425532,
   "Scrollback Lines" : 1000,
   "Send Code When Idle" : false,
   "Close Sessions On End" : true,
@@ -370,7 +371,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.69708853960037231
   },
-  "Transparency" : 0,
+  "Transparency" : 0.20401152482269502,
   "Ansi 1 Color" : {
     "Red Component" : 0.84407895803451538,
     "Color Space" : "sRGB",
