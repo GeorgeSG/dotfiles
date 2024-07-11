@@ -343,11 +343,11 @@
     "Green Component" : 0.69531339406967163
   },
   "Ansi 0 Color" : {
-    "Red Component" : 0,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0,
+    "Red Component" : 0.99999994039535522,
+    "Color Space" : "P3",
+    "Blue Component" : 1,
     "Alpha Component" : 1,
-    "Green Component" : 0
+    "Green Component" : 1
   },
   "Guid" : "34B5E748-F77A-4F71-BF78-FB1D210B3A90",
   "Ansi 2 Color" : {
@@ -387,11 +387,11 @@
     "Green Component" : 0.99999994039535522
   },
   "Ansi 8 Color" : {
-    "Red Component" : 0,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0,
+    "Red Component" : 0.99999994039535522,
+    "Color Space" : "P3",
+    "Blue Component" : 1,
     "Alpha Component" : 1,
-    "Green Component" : 0
+    "Green Component" : 1
   },
   "Ansi 9 Color" : {
     "Red Component" : 0.84407895803451538,
