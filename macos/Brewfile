@@ -1,6 +1,5 @@
 tap 'homebrew/bundle'
 
-brew 'alacritty'
 brew 'bash'
 brew 'bash-git-prompt'
 brew 'btop'

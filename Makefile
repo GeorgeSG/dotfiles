@@ -7,11 +7,6 @@ link:
 	ln -fs ~/Git/dotfiles/home/.config/.aliases ~/.config/
 	ln -fs ~/Git/dotfiles/home/.config/btop ~/.config/
 	ln -fs ~/Git/dotfiles/home/.bashrc ~/
-	### Alacrity
-	ln -fs ~/Git/dotfiles/home/.config/alacritty/ ~/.config/
-	mkdir -p ~/.config/alacritty/themes
-	-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-
 
 
 link_mac:
@@ -69,3 +64,7 @@ hyprach:
 	ln -fs ~/Git/dotfiles/home/.config/eww ~/.config/
 	ln -fs ~/Git/dotfiles/home/.config/hypr ~/.config/
 	ln -fs ~/Git/dotfiles/home/.config/rofi ~/.config/
+	### Alacrity
+	ln -fs ~/Git/dotfiles/home/.config/alacritty/ ~/.config/
+	mkdir -p ~/.config/alacritty/themes
+	-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
