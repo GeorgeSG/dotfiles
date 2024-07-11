@@ -11,6 +11,7 @@ brew 'findutils'
 brew 'fzf'
 brew 'gh'
 brew 'git'
+brew 'git-delta'  # https://github.com/dandavison/delta
 brew 'gnupg'
 brew 'htop'
 brew 'iperf3'
