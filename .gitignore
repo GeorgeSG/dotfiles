@@ -9,3 +9,5 @@ home/.config/alacritty/themes
 
 __pycache__
 *.pyc
+
+*.local
