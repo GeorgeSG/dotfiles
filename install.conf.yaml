@@ -38,7 +38,6 @@
       if: '[ `uname` = Darwin ]'
       path: macos/hushlogin
 
-
 - shell:
   - git submodule sync --recursive
   # the following have to run after linking ~/.gitconfig
@@ -53,3 +52,16 @@
   # install BD zsh plugin - this needs to happen after the cleanall
   - mkdir -p ~/.config/zsh/plugins/bd
   - curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.config/zsh/plugins/bd/bd.zsh
+
+  - stdin: true
+    stdout: true
+    command: >
+      if [ "$(uname)" = "Darwin" ]; then
+        ./macos/install_brew.sh
+        brew install zsh
+        sudo chsh -s $(brew --prefix)/bin/zsh
+        brew bundle --file ./macos/Brewfile
+        brew bundle --file ./macos/Caskfile
+
+        ./macos/macos_setup.sh
+      fi
