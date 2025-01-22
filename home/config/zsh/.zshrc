@@ -72,14 +72,13 @@ source "$ZDOTDIR/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 source "$ZDOTDIR/plugins/calc.plugin.zsh/calc.plugin.zsh"
 
 # https://github.com/lukechilds/zsh-better-npm-completion
-source "$ZDOTDIR/plugins/.zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
+source "$ZDOTDIR/plugins/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
 
 # https://github.com/sunlei/zsh-ssh
 source "$ZDOTDIR/plugins/zsh-ssh/zsh-ssh.zsh"
 
 # https://github.com/Tarrasch/zsh-bd
 source "$ZDOTDIR/plugins/bd/bd.zsh"
-
 
 
 

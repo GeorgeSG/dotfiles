@@ -12,7 +12,7 @@ alias la='ls -AG'
 alias l='ls -CFG'
 
 # eza aliases, if available
-if type ls >/dev/null 2>&1; then
+if type eza >/dev/null 2>&1; then
   eza_params=(
     '--git' '--icons' '--group' '--group-directories-first'
     '--time-style=relative'
