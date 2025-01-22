@@ -81,3 +81,9 @@
 
     # Show the user email for the current repository.
 	whoami = config user.email
+
+    # used for dotbot only
+    cleanall = clean -fdx # this is dangerous, so it's intentionally long to type
+
+    update-submodules = submodule update --init --recursive
+	upgrade-submodules = submodule update --init --remote

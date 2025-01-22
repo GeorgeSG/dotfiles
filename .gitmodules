@@ -2,3 +2,27 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "home/config/tmux/plugins/tpm"]
+	path = home/config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "home/config/bash/bash-git-prompt"]
+	path = home/config/bash/bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "home/config/zsh/plugins/zsh-git-prompt"]
+	path = home/config/zsh/plugins/zsh-git-prompt
+	url = git@github.com:zsh-git-prompt/zsh-git-prompt.git
+[submodule "home/config/zsh/plugins/calc.plugin.zsh"]
+	path = home/config/zsh/plugins/calc.plugin.zsh
+	url = git@github.com:arzzen/calc.plugin.zsh.git
+[submodule "home/config/zsh/plugins/zsh-vim-mode"]
+	path = home/config/zsh/plugins/zsh-vim-mode
+	url = git@github.com:softmoth/zsh-vim-mode.git
+[submodule "home/config/zsh/plugins/zsh-better-npm-completion"]
+	path = home/config/zsh/plugins/zsh-better-npm-completion
+	url = https://github.com/lukechilds/zsh-better-npm-completion.git
+[submodule "home/config/zsh/plugins/zsh-ssh"]
+	path = home/config/zsh/plugins/zsh-ssh
+	url = https://github.com/sunlei/zsh-ssh
+[submodule "home/vim/bundle/Vundle.vim"]
+	path = home/vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
