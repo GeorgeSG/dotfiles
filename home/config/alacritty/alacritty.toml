@@ -1,8 +1,9 @@
+terminal.shell = '/bin/zsh'
+
+[general]
 import = [
     "~/.config/alacritty/themes/themes/tomorrow_night.toml"
 ]
-
-shell = '/bin/zsh'
 
 [window]
 padding = { x = 16, y = 8 }
