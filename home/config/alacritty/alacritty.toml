@@ -1,15 +1,11 @@
-terminal.shell = '/bin/zsh'
-
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/tomorrow_night.toml"
+    "~/.config/alacritty/tomorrow-night-gardev.toml"
 ]
 
 [window]
 padding = { x = 16, y = 8 }
 dynamic_title = true
-opacity = 0.8
-blur = true
 
 [scrolling]
 history = 10000
