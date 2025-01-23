@@ -29,6 +29,7 @@
 
     # tmux
     ~/.tmux.conf: home/tmux.conf
+    ~/.config/tmux/plugins: home/config/tmux/plugins
     ~/.config/tmux/themes: home/config/tmux/themes
 
     ~/.config/.aliases: home/config/aliases
