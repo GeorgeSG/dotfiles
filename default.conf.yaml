@@ -8,17 +8,20 @@
 - clean: ['~']
 
 - create:
+    - ~/.config
     - ~/.config/bash
     - ~/.config/tmux
-    - ~/.vim/undo-history
 
 - link:
+    # git
     ~/.gitconfig: home/gitconfig
-    ~/.git-completion.bash: home/config/bash/git-completion.bash
-    ~/.git-prompt-colors.sh: home/config/bash/git-prompt-colors.sh
+    ~/.config/.gitignore_global: home/config/gitignore_global
 
+    # bash
     ~/.bashrc: home/bashrc
     ~/.config/bash/.bash_profile: home/config/bash/bash_profile
+    ~/.git-completion.bash: home/config/bash/git-completion.bash
+    ~/.git-prompt-colors.sh: home/config/bash/git-prompt-colors.sh
 
     # apps
     ~/.config/alacritty: home/config/alacritty
@@ -30,9 +33,11 @@
 
     ~/.config/.aliases: home/config/aliases
 
+    # vim
     ~/.vim : home/vim
     ~/.vimrc: home/vimrc
 
+    # zsh
     ~/.zshenv: home/zshenv
     ~/.config/zsh: home/config/zsh
 
@@ -65,6 +70,4 @@
         sudo chsh -s $(brew --prefix)/bin/zsh
         brew bundle --file ./macos/Brewfile
         brew bundle --file ./macos/Caskfile
-
-        ./macos/macos_setup.sh
       fi
