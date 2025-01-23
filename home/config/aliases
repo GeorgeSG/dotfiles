@@ -61,6 +61,24 @@ alias gsf="git sf"
 alias gaf="git af"
 alias gmf="git mf"
 
+# Github CLI Aliases
+if type gh >/dev/null 2>&1; then
+  alias gp="gh pr"
+  alias gps="gh pr status"
+
+  # my prs
+  alias prso="gh pr list --author @me --state open"
+
+  function prsob() {
+    gh pr list --author $1 --state open
+  }
+
+  function prscb() {
+    gh pr list --author $1 --state closed
+  }
+fi
+
+
 # tmux
 alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
 alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
@@ -80,6 +98,7 @@ alias dps="docker ps"
 alias dl="docker logs"
 
 # Editing files
+alias raliases="source ~/.config/.aliases && source ~/.config/.aliases.local"
 alias aliases="code ~/.config/aliases"
 alias laliases="code ~/.config/aliases.local"
 alias zshrc="code $ZDOTDIR/.zshrc"
