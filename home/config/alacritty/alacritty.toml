@@ -12,7 +12,7 @@ history = 10000
 multiplier = 3
 
 [font]
-normal = { family = "CaskaydiaCove Nerd Font Mono" }
+normal = { family = "CaskaydiaCove Nerd Font Mono", style = "Regular" }
 size = 14
 offset = { y = 1 }
 
