@@ -25,7 +25,7 @@ brew 'tldr'
 brew 'tmux'
 brew 'tree'
 brew 'wget'
-brew 'youtube-dl'
+# brew 'youtube-dl' # fails
 brew 'zoxide'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
