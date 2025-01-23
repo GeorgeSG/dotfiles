@@ -18,3 +18,9 @@ offset = { y = 1 }
 
 [cursor]
 style = { shape = "Beam", blinking = "Always" }
+
+[[hints.enabled]]
+regex = "https?://[^\\s]+"
+hyperlinks = true
+command = { program = "open" }
+mouse = { enabled = true }
