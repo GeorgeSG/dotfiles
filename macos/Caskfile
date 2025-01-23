@@ -5,6 +5,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 
+cask 'alacritty'
 cask 'alt-tab'
 cask 'apparency'
 cask 'arc'
@@ -36,4 +37,4 @@ cask 'vlc'
 
 # Mac App Store
 mas 'Dato', id: 1470584107
-mas 'rcmd', id: 1596283165
+# mas 'rcmd', id: 1596283165  # -- not really using for now
