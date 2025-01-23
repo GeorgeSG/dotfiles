@@ -1,3 +1,6 @@
+## TODO:
+## cask_personal using some variable?
+
 - defaults:
     link:
       relink: true

@@ -1,0 +1,14 @@
+- shell:
+  -
+    stdin: true
+    stdout: true
+    description: Setting Mac OS defaults
+    command: >
+      if [ "$(uname)" = "Darwin" ]; then
+        ./macos/macos_setup.sh
+      fi
+  -
+    command: ./clone.sh
+    description: Cloning Git repos
+    stdout: true
+    quiet: false
