@@ -1,6 +1,4 @@
 
-ZDOTDIR=~/.config/zsh
-
 setopt auto_cd
 setopt no_case_glob
 setopt glob_complete
@@ -15,9 +13,8 @@ setopt completeinword # not just at the end
 # --------
 
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle :compinstall filename '/home/georgi/.config/zsh/.zshrc'
+zstyle :compinstall filename '~/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
