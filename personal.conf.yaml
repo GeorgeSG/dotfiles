@@ -1,0 +1,10 @@
+## TODO:
+## cask_personal using some variable?
+
+- shell:
+  - stdin: true
+    stdout: true
+    command: >
+      if [ "$(uname)" = "Darwin" ]; then
+        brew bundle --file ./macos/Caskfile.personal
+      fi

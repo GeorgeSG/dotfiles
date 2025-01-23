@@ -2,7 +2,6 @@
 
 cask_args appdir: '/Applications'
 
-cask 'authy'
 cask 'battle-net'
 cask 'bitwarden'
 cask 'discord'
