@@ -5,6 +5,7 @@
 ### git-delta
 [core]
     pager = delta
+    excludesfile = ~/.config/.gitignore_global
 [interactive]
     diffFilter = delta --color-only
 [delta]
