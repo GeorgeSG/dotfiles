@@ -5,6 +5,7 @@
     description: Setting Mac OS defaults
     command: >
       if [ "$(uname)" = "Darwin" ]; then
+        xcode-select --install
         ./macos/macos_setup.sh
       fi
   -
