@@ -99,8 +99,8 @@ alias dl="docker logs"
 
 # Editing files
 alias raliases="source ~/.config/.aliases && source ~/.config/.aliases.local"
-alias aliases="code ~/.config/aliases"
-alias laliases="code ~/.config/aliases.local"
+alias aliases="code ~/.config/.aliases"
+alias laliases="code ~/.config/.aliases.local"
 alias zshrc="code $ZDOTDIR/.zshrc"
 alias lzshrc="code $ZDOTDIR/.zshrc.local"
 alias vimrc="vim ~/.vimrc"
@@ -139,5 +139,34 @@ if type dust >/dev/null 2>&1; then
 fi
 
 if type bat >/dev/null 2>&1; then
+  if ! command -v cat_ &>/dev/null; then
+    alias cat_="$(which cat)"
+  fi
+
   alias cat="bat"
+fi
+
+if type doggo >/dev/null 2>&1; then
+  if ! command -v dig_ &>/dev/null; then
+    alias dig_=$(which dig)
+  fi
+
+  alias dig="doggo"
+fi
+
+
+if type duf >/dev/null 2>&1; then
+  if ! command -v duf_ &>/dev/null; then
+    alias duf_=$(which df)
+  fi
+
+  alias df="duf"
+fi
+
+if type gping >/dev/null 2>&1; then
+  if ! command -v ping_ &>/dev/null; then
+    alias ping_=$(which ping)
+  fi
+
+  alias ping="gping"
 fi
