@@ -56,7 +56,6 @@ zsh:
 	-git clone https://github.com/lukechilds/zsh-better-npm-completion.git ~/.config/zsh/plugins/.zsh-better-npm-completion
 	-git clone https://github.com/sunlei/zsh-ssh ~/.config/zsh/plugins/zsh-ssh
 
-	## dotbot TODO
 	mkdir -p ~/.config/zsh/plugins/bd
 	curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ~/.config/zsh/plugins/bd/bd.zsh
 
