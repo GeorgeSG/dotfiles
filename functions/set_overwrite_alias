@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set_overwrite_alias() {
+  local new_cmd="$1"    # e.g., "bat"
+  local alias_name="$2" # e.g., "cat"
+
+  if [ -z "$new_cmd" ] || [ -z "$alias_name" ]; then
+    echo "Usage: set_overwrite_alias <new_command> <alias_name>"
+    return 1
+  fi
+
+  # Check that the new command exists.
+  if type "$new_cmd" >/dev/null 2>&1; then
+    # Define a backup alias by appending an underscore (e.g., "cat_" for "cat")
+    local backup_alias="${alias_name}_"
+
+    # If the backup alias isn't already set, create it pointing to the original command.
+    if ! command -v "$backup_alias" &>/dev/null; then
+      alias "$backup_alias"="$(which "$alias_name")"
+    fi
+
+    # Create the alias: e.g., alias "cat" to "bat".
+    alias "$alias_name"="$new_cmd"
+  fi
+}
