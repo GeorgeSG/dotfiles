@@ -1,8 +1,26 @@
 #!/usr/bin/env bash
 
+# set_overwrite_alias - A Bash function to alias a command while preserving the original.
+#
+# Usage:
+#   set_overwrite_alias <new_command> <alias_name>
+#
+# Parameters:
+#   new_command: The command to alias to (e.g., "bat").
+#   alias_name: The alias name to override (e.g., "cat").
+#
+# Behavior:
+#   - Checks if the new command exists.
+#   - If it exists and the backup alias (alias_name with an underscore appended) isn't set,
+#     it creates a backup alias pointing to the original command.
+#   - Sets the alias (alias_name) to use the new command.
+#
+# Example:
+#   To alias "bat" as "cat" and preserve the original "cat" as "cat_", run:
+#       set_overwrite_alias bat cat
 set_overwrite_alias() {
-  local new_cmd="$1"    # e.g., "bat"
-  local alias_name="$2" # e.g., "cat"
+  local new_cmd="$1"
+  local alias_name="$2"
 
   if [ -z "$new_cmd" ] || [ -z "$alias_name" ]; then
     echo "Usage: set_overwrite_alias <new_command> <alias_name>"
