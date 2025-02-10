@@ -4,12 +4,106 @@
 alias ...="cd ../../"
 alias ....="cd ../../../"
 
-alias df1="du -h -d 1"
-
-# alias ls='ls -hG'
 alias ll='ls -alhFG'
 alias la='ls -AG'
 alias l='ls -CFG'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# CD-ing to some commonly used folders
+alias og="cd ~/Git"
+alias dotfiles="cd ~/Git/dotfiles"
+
+# Editing files
+alias raliases="source ~/.config/.aliases && source ~/.config/.aliases.local"
+alias aliases="code ~/.config/.aliases"
+alias laliases="code ~/.config/.aliases.local"
+alias zshrc="code $ZDOTDIR/.zshrc"
+alias lzshrc="code $ZDOTDIR/.zshrc.local"
+alias vimrc="vim ~/.vimrc"
+
+# NPM
+alias npr="npm run"
+
+# IP addresses & networking
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Misc
+alias c="clear"
+alias be="bundle exec"
+alias serve="python -m http.server 9000"
+alias yda="youtube-dl -x --audio-format mp3"
+
+# tmux
+if type tmux >/dev/null 2>&1; then
+  alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
+  alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
+  alias tmks="tmux kill-session -t"
+  alias tmas="tmux attach-session -t"
+  alias tmls="tmux list-sessions"
+fi
+
+# Docker
+if type docker >/dev/null 2>&1; then
+  alias dc="docker compose"
+  alias de="docker exec"
+  alias dr="docker run"
+  alias db="docker build"
+  alias ds="docker stop"
+  alias drm="docker rm"
+  alias drmi="docker rmi"
+  alias dps="docker ps"
+  alias dl="docker logs"
+fi
+
+# Git Aliases
+if type git >/dev/null 2>&1; then
+  alias g="git"
+  alias ga="git add"
+  alias gr="git rm"
+  alias gc="git commit"
+  alias gs="git status -s"
+  alias gss="git status"
+  alias gd="git diff"
+  alias gds="git diff --staged"
+  alias gco="git checkout"
+  alias gcom="git checkout master"
+  alias gpom="git pull origin master"
+  alias gbd="git branch -D"
+  alias gm="git mergetool"
+  alias gmc="git merge --continue"
+  alias grc="git rebase --continue"
+  alias gsf="git sf"
+  alias gaf="git af"
+  alias gmf="git mf"
+fi
+
+# Github CLI Aliases
+if type gh >/dev/null 2>&1; then
+  alias gp="gh pr"
+  alias gps="gh pr status"
+
+  # my prs
+  alias prso="gh pr list --author @me --state open"
+
+  function prsob() {
+    gh pr list --author $1 --state open
+  }
+
+  function prscb() {
+    gh pr list --author $1 --state closed
+  }
+fi
+
+if type systemctl >/dev/null 2>&1; then
+  alias ssc="sudo systemctl"
+  alias sc="systemctl"
+  alias scs="systemctl status"
+  alias scst="systemctl start"
+fi
 
 # eza aliases, if available
 if type eza >/dev/null 2>&1; then
@@ -33,140 +127,15 @@ if type eza >/dev/null 2>&1; then
   alias lX='ll --sort=ext'
 fi
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# CD-ing to some commonly used folders
-alias og="cd ~/Git"
-alias dotfiles="cd ~/Git/dotfiles"
-
-# Git Aliases
-alias g="git"
-alias ga="git add"
-alias gr="git rm"
-alias gc="git commit"
-alias gs="git status -s"
-alias gss="git status"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gco="git checkout"
-alias gcom="git checkout master"
-alias gpom="git pull origin master"
-alias gbd="git branch -D"
-alias gm="git mergetool"
-alias gmc="git merge --continue"
-alias grc="git rebase --continue"
-alias gsf="git sf"
-alias gaf="git af"
-alias gmf="git mf"
-
-# Github CLI Aliases
-if type gh >/dev/null 2>&1; then
-  alias gp="gh pr"
-  alias gps="gh pr status"
-
-  # my prs
-  alias prso="gh pr list --author @me --state open"
-
-  function prsob() {
-    gh pr list --author $1 --state open
-  }
-
-  function prscb() {
-    gh pr list --author $1 --state closed
-  }
-fi
-
-
-# tmux
-alias tm="tmux -2 attach-session -t "default" || tmux -2 new-session -s \"default\""
-alias tmv="tmux -2 attach-session -t "vscode" || tmux -2 new-session -s \"vscode\""
-alias tmks="tmux kill-session -t"
-alias tmas="tmux attach-session -t"
-alias tmls="tmux list-sessions"
-
-# Docker
-alias dc="docker compose"
-alias de="docker exec"
-alias dr="docker run"
-alias db="docker build"
-alias ds="docker stop"
-alias drm="docker rm"
-alias drmi="docker rmi"
-alias dps="docker ps"
-alias dl="docker logs"
-
-# Editing files
-alias raliases="source ~/.config/.aliases && source ~/.config/.aliases.local"
-alias aliases="code ~/.config/.aliases"
-alias laliases="code ~/.config/.aliases.local"
-alias zshrc="code $ZDOTDIR/.zshrc"
-alias lzshrc="code $ZDOTDIR/.zshrc.local"
-alias vimrc="vim ~/.vimrc"
-
-# NPM
-alias npr="npm run"
-
-# IP addresses & networking
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-
-# Misc
-
-alias c="clear"
-alias be="bundle exec"
-alias serve="python -m http.server 9000"
-alias yda="youtube-dl -x --audio-format mp3"
-alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
+set_overwrite_alias bat cat
+set_overwrite_alias doggo dig
+set_overwrite_alias duf df
+set_overwrite_alias gping ping
+set_overwrite_alias dust du
 
 ##### Mac OS Specific #####
 if [ "$(uname)" = "Darwin" ]; then
   alias fl="open -a ForkLift"
   alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-fi
-
-if type systemctl >/dev/null 2>&1; then
-  alias ssc="sudo systemctl"
-  alias sc="systemctl"
-  alias scs="systemctl status"
-  alias scst="systemctl start"
-fi
-
-if type dust >/dev/null 2>&1; then
-  alias du="dust"
-fi
-
-if type bat >/dev/null 2>&1; then
-  if ! command -v cat_ &>/dev/null; then
-    alias cat_="$(which cat)"
-  fi
-
-  alias cat="bat"
-fi
-
-if type doggo >/dev/null 2>&1; then
-  if ! command -v dig_ &>/dev/null; then
-    alias dig_=$(which dig)
-  fi
-
-  alias dig="doggo"
-fi
-
-
-if type duf >/dev/null 2>&1; then
-  if ! command -v duf_ &>/dev/null; then
-    alias duf_=$(which df)
-  fi
-
-  alias df="duf"
-fi
-
-if type gping >/dev/null 2>&1; then
-  if ! command -v ping_ &>/dev/null; then
-    alias ping_=$(which ping)
-  fi
-
-  alias ping="gping"
+  alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 fi
