@@ -51,7 +51,7 @@ setopt no_beep            # Don't beep on command input error
 # Include functions
 fpath+=~/Git/dotfiles/functions
 autoload extract
-autoload set_overwrite_alias
+autoload set_alias_with_backup
 
 [ -f $ZDOTDIR/.zshrc.local ] && source $ZDOTDIR/.zshrc.local
 [ -f ~/.config/.aliases ] && source ~/.config/.aliases
