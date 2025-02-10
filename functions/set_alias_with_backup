@@ -3,11 +3,11 @@
 # set_alias_with_backup - A Bash function to alias a command while preserving the original.
 #
 # Usage:
-#   set_alias_with_backup <new_command> <alias_name>
+#   set_alias_with_backup <alias_name> <new_command>
 #
 # Parameters:
-#   new_command: The command to alias to (e.g., "bat").
 #   alias_name: The alias name to override (e.g., "cat").
+#   new_command: The command to alias to (e.g., "bat").
 #
 # Behavior:
 #   - Checks if the new command exists.
@@ -17,27 +17,34 @@
 #
 # Example:
 #   To alias "bat" as "cat" and preserve the original "cat" as "cat_", run:
-#       set_alias_with_backup bat cat
+#       set_alias_with_backup cat bat
 set_alias_with_backup() {
-  local new_cmd="$1"
-  local alias_name="$2"
+  local alias_name="$1"
+  local new_cmd="$2"
 
-  if [ -z "$new_cmd" ] || [ -z "$alias_name" ]; then
-    echo "Usage: set_overwrite_alias <new_command> <alias_name>"
+  # Allow for extra parameters to be passed to the new command.
+  shift 2
+  local extra_params="$*"
+
+  # Check that both arguments are provided.
+  if [ -z "$alias_name" ] || [ -z "$new_cmd" ]; then
+    echo "Usage: set_alias_with_backup <alias_name> <new_command> [extra_params]"
     return 1
   fi
 
   # Check that the new command exists.
-  if type "$new_cmd" >/dev/null 2>&1;then
-    # Define a backup alias by appending an underscore (e.g., "cat_" for "cat")
+  if type "$new_cmd" >/dev/null 2>&1; then
+    # Define a backup alias by appending an underscore
+    # (e.g., "cat_" for "cat")
     local backup_alias="${alias_name}_"
 
-    # If the backup alias isn't already set, create it pointing to the original command.
+    # If the backup alias isn't already set, create it pointing
+    # to the original command.
     if ! type "$backup_alias" >/dev/null 2>&1; then
       alias "$backup_alias"="$(which "$alias_name")"
     fi
 
-    # Create the alias: e.g., alias "cat" to "bat".
-    alias "$alias_name"="$new_cmd"
+    # Create the alias: e.g., alias "cat" to "bat" and pass any extra params.
+    alias "$alias_name"="$new_cmd $extra_params"
   fi
 }
