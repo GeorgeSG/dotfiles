@@ -127,11 +127,11 @@ if type eza >/dev/null 2>&1; then
   alias lX='ll --sort=ext'
 fi
 
-set_overwrite_alias bat cat
-set_overwrite_alias doggo dig
-set_overwrite_alias duf df
-set_overwrite_alias gping ping
-set_overwrite_alias dust du
+set_alias_with_backup bat cat
+set_alias_with_backup doggo dig
+set_alias_with_backup duf df
+set_alias_with_backup gping ping
+set_alias_with_backup dust du
 
 ##### Mac OS Specific #####
 if [ "$(uname)" = "Darwin" ]; then
