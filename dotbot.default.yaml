@@ -1,6 +1,3 @@
-## TODO:
-## cask_personal using some variable?
-
 - defaults:
     link:
       relink: true
@@ -64,11 +61,16 @@
 
   - stdin: true
     stdout: true
+    stderr: true
     command: >
       if [ "$(uname)" = "Darwin" ]; then
-        ./macos/install_brew.sh
-        brew install zsh
-        sudo chsh -s $(brew --prefix)/bin/zsh
-        brew bundle --file ./macos/Brewfile
-        brew bundle --file ./macos/Caskfile
+        ./install_macos.sh
+      fi
+
+  - stdin: true
+    stdout: true
+    stderr: true
+    command: >
+      if [ "$(uname)" = "Linux" ]; then
+        ./install_linux.sh
       fi
