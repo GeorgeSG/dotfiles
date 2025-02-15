@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# Check for Homebrew and install if missing
+# Install Brew
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -10,3 +10,8 @@ if test ! $(which brew); then
 fi
 
 brew update
+
+brew install zsh
+sudo chsh -s $(brew --prefix)/bin/zsh
+brew bundle --file ./macos/Brewfile
+brew bundle --file ./macos/Caskfile
