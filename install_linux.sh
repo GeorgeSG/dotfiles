@@ -6,17 +6,11 @@ chsh -s $(which zsh)
 
 sudo apt-get install -y \
     bash \
-    bash-git-prompt \
-    bitwarden-cli \
     btop \
     coreutils \
     docker \
-    doggo \
     duf \
-    dust \
     eza \
-    fastfetch \
-    fd \
     findutils \
     fzf \
     gh \
@@ -26,16 +20,19 @@ sudo apt-get install -y \
     gping \
     htop \
     iperf3 \
-    jnv \
     jq \
-    kondo \
-    mas \
-    nvm \
     tealdeer \
     tmux \
-    tokei \
     tree \
     wget \
     zoxide \
     zsh \
     zsh-syntax-highlighting
+
+sudo snap install doggo
+sudo snap install dust
+# sudo snap install fastfetch
+# sudo snap install fd
+# sudo snap install jnv
+# sudo snap install kondo
+# sudo snap install tokei
