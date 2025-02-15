@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt-get install -y zsh
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 sudo apt-get install -y \
     bash \
