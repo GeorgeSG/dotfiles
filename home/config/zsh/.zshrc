@@ -83,4 +83,8 @@ source "$ZDOTDIR/plugins/bd/bd.zsh"
 # Prompt
 source $ZDOTDIR/.zprompt
 
+eval $(thefuck --alias)
+eval "$(zoxide init zsh --cmd cd)"
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

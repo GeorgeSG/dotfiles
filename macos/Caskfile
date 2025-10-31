@@ -2,24 +2,19 @@
 
 cask_args appdir: '/Applications'
 
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-
 cask 'alacritty'
 cask 'alt-tab'
 cask 'apparency'
-cask 'arc'
-cask 'bartender'
-cask 'datweatherdoe'
+# cask 'datweatherdoe'
 cask 'figma'
 cask 'firefox'
-cask 'font-caskaydia-cove-nerd-font'
 cask 'font-caskaydia-mono-nerd-font'
-cask 'forklift3'
+cask 'forklift'
 cask 'gifox'
 cask 'google-chrome'
 cask 'imageoptim'
-cask 'iterm2'
+# cask 'iterm2' # -- replaced by alacritty
+cask 'karabiner-elements'
 cask 'keyboardcleantool'
 cask 'monitorcontrol'
 cask 'notion'
@@ -31,10 +26,13 @@ cask 'soundsource'
 # cask 'istat-menus' # -- replaced by stats
 cask 'stats'
 cask 'the-unarchiver'
+cask 'todoist-app'
 cask 'rar'
 cask 'visual-studio-code'
 cask 'vlc'
 
 # Mac App Store
 mas 'Dato', id: 1470584107
+mas 'Wireguard', id: 1451685025
+mas 'iBar Pro', id: 6737150304
 # mas 'rcmd', id: 1596283165  # -- not really using for now
