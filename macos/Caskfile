@@ -25,6 +25,7 @@ cask 'slack'
 cask 'soundsource'
 # cask 'istat-menus' # -- replaced by stats
 cask 'stats'
+cask 'swift-shift'
 cask 'the-unarchiver'
 cask 'todoist-app'
 cask 'rar'
