@@ -2,6 +2,7 @@
 
 sudo apt-get update
 sudo apt-get install -y zsh
+
 zsh_path="$(command -v zsh)"
 if [ "$SHELL" != "$zsh_path" ]; then
   sudo chsh -s "$zsh_path" "$(id -un)"
@@ -24,6 +25,7 @@ sudo apt-get install -y \
     iperf3 \
     jq \
     tealdeer \
+    thefuck \
     tmux \
     tree \
     wget \
