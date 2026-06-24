@@ -5,11 +5,11 @@
     description: Setting Mac OS defaults
     command: >
       if [ "$(uname)" = "Darwin" ]; then
-        xcode-select --install
-        ./macos/macos_setup.sh
+        xcode-select -p &>/dev/null || xcode-select --install
+        ./shell/macos_setup.sh
       fi
   -
-    command: ./clone.sh
+    command: ./shell/clone.sh
     description: Cloning Git repos
     stdout: true
     quiet: false

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Install Brew
-if test ! $(which brew); then
+if ! command -v brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.bash_profile.local
