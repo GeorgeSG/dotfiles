@@ -6,6 +6,7 @@
 [core]
     pager = delta
     excludesfile = ~/.config/.gitignore_global
+	editor = code --wait
 [interactive]
     diffFilter = delta --color-only
 [delta]
