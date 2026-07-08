@@ -7,6 +7,7 @@
 - create:
     - ~/.config
     - ~/.config/bash
+    - ~/.config/herdr
     - ~/.config/tmux
     - ~/.claude
 
@@ -24,6 +25,7 @@
     # apps
     ~/.config/alacritty: home/config/alacritty
     ~/.config/btop: home/config/btop
+    ~/.config/herdr/config.toml: home/config/herdr/config.toml
 
     # tmux
     ~/.tmux.conf: home/tmux.conf

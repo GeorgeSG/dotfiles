@@ -17,6 +17,7 @@ brew 'git'
 brew 'git-delta'  # https://github.com/dandavison/delta
 brew 'gnupg'
 brew 'gping'
+brew 'herdr'
 brew 'htop'
 brew 'iperf3'
 brew 'jnv'
