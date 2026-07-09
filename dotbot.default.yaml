@@ -27,6 +27,7 @@
     ~/.config/btop: home/config/btop
     ~/.config/ghostty: home/config/ghostty
     ~/.config/herdr/config.toml: home/config/herdr/config.toml
+    ~/.config/yazi: home/config/yazi
 
     # tmux
     ~/.tmux.conf: home/tmux.conf

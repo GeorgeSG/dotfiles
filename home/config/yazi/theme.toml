@@ -1,0 +1,90 @@
+# Tomorrow Night
+
+[mgr]
+cwd = { fg = "#a3c7c3" }
+find_keyword = { fg = "#edd090", bold = true, italic = true, underline = true }
+find_position = { fg = "#bba7c4", bg = "reset", bold = true, italic = true }
+marker_copied = { fg = "#c2c683", bg = "#c2c683" }
+marker_cut = { fg = "#ca807b", bg = "#ca807b" }
+marker_marked = { fg = "#a3c7c3", bg = "#a3c7c3" }
+marker_selected = { fg = "#edd090", bg = "#edd090" }
+count_copied = { fg = "#27292b", bg = "#c2c683" }
+count_cut = { fg = "#27292b", bg = "#ca807b" }
+count_selected = { fg = "#27292b", bg = "#edd090" }
+border_style = { fg = "#777777" }
+
+[tabs]
+active = { fg = "#27292b", bg = "#98b0c7", bold = true }
+inactive = { fg = "#98b0c7" }
+
+[mode]
+normal_main = { fg = "#27292b", bg = "#98b0c7", bold = true }
+normal_alt = { fg = "#98b0c7" }
+select_main = { fg = "#27292b", bg = "#ca807b", bold = true }
+select_alt = { fg = "#ca807b" }
+unset_main = { fg = "#27292b", bg = "#ca807b", bold = true }
+unset_alt = { fg = "#ca807b" }
+
+[status]
+perm_sep = { fg = "#999999" }
+perm_type = { fg = "#c2c683" }
+perm_read = { fg = "#edd090" }
+perm_write = { fg = "#ca807b" }
+perm_exec = { fg = "#a3c7c3" }
+progress_normal = { fg = "#c2c683", bg = "#27292b" }
+progress_error = { fg = "#edd090", bg = "#ca807b" }
+
+[which]
+mask = { bg = "#27292b" }
+cand = { fg = "#a3c7c3" }
+rest = { fg = "#999999" }
+desc = { fg = "#bba7c4" }
+separator_style = { fg = "#999999" }
+
+[confirm]
+border = { fg = "#98b0c7" }
+title = { fg = "#98b0c7" }
+
+[spot]
+border = { fg = "#98b0c7" }
+title = { fg = "#98b0c7" }
+tbl_col = { fg = "#98b0c7" }
+tbl_cell = { fg = "#edd090", reversed = true }
+
+[notify]
+title_info = { fg = "#c2c683" }
+title_warn = { fg = "#edd090" }
+title_error = { fg = "#ca807b" }
+
+[pick]
+border = { fg = "#98b0c7" }
+active = { fg = "#bba7c4", bold = true }
+
+[input]
+border = { fg = "#98b0c7" }
+
+[cmp]
+border = { fg = "#98b0c7" }
+
+[tasks]
+border = { fg = "#98b0c7" }
+hovered = { fg = "#bba7c4", bold = true }
+
+[help]
+on = { fg = "#a3c7c3" }
+run = { fg = "#bba7c4" }
+footer = { fg = "#27292b", bg = "#d0d2d0" }
+
+[filetype]
+rules = [
+    { mime = "image/*", fg = "#edd090" },
+    { mime = "{audio,video}/*", fg = "#bba7c4" },
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ca807b" },
+    { mime = "application/{pdf,doc,rtf}", fg = "#a3c7c3" },
+    { mime = "vfs/{absent,stale}", fg = "#999999" },
+    { url = "*", is = "orphan", bg = "#ca807b" },
+    { url = "*", is = "exec", fg = "#c2c683" },
+    { url = "*", is = "dummy", bg = "#ca807b" },
+    { url = "*/", is = "dummy", bg = "#ca807b" },
+    { url = "*/", fg = "#98b0c7" },
+]
