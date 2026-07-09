@@ -10,23 +10,28 @@ onboarding = false
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
 #                  vesper
-name = "vesper"
-
-# Follow host terminal light/dark appearance and switch Herdr UI themes.
-# Existing manual behavior is unchanged unless this is true.
-# auto_switch = false
-# dark_name = "catppuccin"
-# light_name = "catppuccin-latte"
-
-# Override individual color tokens on top of the base theme.
-# Accepts: hex (#rrggbb), named colors, rgb(r,g,b), or panel_bg = "reset"
-# [theme.custom]
-# panel_bg = "reset"
-# accent = "#f5c2e7"
-# red = "#ff6188"
-# green = "#a6e3a1"
-
+name = "terminal"
 auto_switch = false
+
+# Tomorrow Night
+[theme.custom]
+panel_bg = "#27292b"
+surface_dim = "#212325"
+surface0 = "#313437"
+surface1 = "#3c4043"
+overlay0 = "#777777"
+overlay1 = "#999999"
+text = "#d0d2d0"
+subtext0 = "#999999"
+accent = "#98b0c7"
+red = "#ca807b"
+green = "#c2c683"
+yellow = "#edd090"
+blue = "#98b0c7"
+mauve = "#bba7c4"
+teal = "#a3c7c3"
+peach = "#e0b285"
+
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.
@@ -112,7 +117,7 @@ agent_panel_sort = "priority"
 
 # Accent color for highlights, borders, and navigation UI.
 # Accepts: hex (#89b4fa), named colors (cyan, blue, magenta), or rgb(r,g,b)
-accent = "cyan"
+accent = "#98b0c7"
 
 [ui.toast]
 delivery = "herdr"
@@ -128,6 +133,10 @@ position = "bottom-center"
 [experimental]
 # Save recent pane screen history across full server restarts.
 pane_history = false
+
+# Show the real terminal cursor in the focused pane instead of herdr's solid block.
+reveal_hidden_cursor_for_cjk_ime = true
+cjk_ime_cursor_shape = "bar"
 
 [advanced]
 scrollback_limit_bytes = 33554432 # 32 MiB ~ 50k lines (tmux history-limit)
