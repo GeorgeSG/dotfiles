@@ -25,6 +25,7 @@
     # apps
     ~/.config/alacritty: home/config/alacritty
     ~/.config/btop: home/config/btop
+    ~/.config/ghostty: home/config/ghostty
     ~/.config/herdr/config.toml: home/config/herdr/config.toml
 
     # tmux

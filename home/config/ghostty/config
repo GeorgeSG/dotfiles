@@ -1,0 +1,13 @@
+theme = tomorrow-night-gardev
+
+font-family = CaskaydiaCove Nerd Font Mono
+font-size = 14
+font-thicken = true
+
+window-padding-x = 16
+window-padding-y = 8
+
+cursor-style = bar
+cursor-style-blink = true
+
+macos-option-as-alt = left

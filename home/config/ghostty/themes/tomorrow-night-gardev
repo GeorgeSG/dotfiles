@@ -1,0 +1,23 @@
+# Tomorrow Night
+background = #27292b
+foreground = #d0d2d0
+cursor-color = #d0d2d0
+cursor-text = #27292b
+bold-is-bright = true
+
+palette = 0=#777777
+palette = 1=#ca807b
+palette = 2=#c2c683
+palette = 3=#edd090
+palette = 4=#98b0c7
+palette = 5=#bba7c4
+palette = 6=#a3c7c3
+palette = 7=#fefefe
+palette = 8=#999999
+palette = 9=#ca807b
+palette = 10=#c2c683
+palette = 11=#edd090
+palette = 12=#98b0c7
+palette = 13=#bba7c4
+palette = 14=#a3c7c3
+palette = 15=#fefefe
