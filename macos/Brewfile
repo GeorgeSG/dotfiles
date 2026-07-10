@@ -32,6 +32,7 @@ brew 'tmux'
 brew 'tree'
 brew 'wget'
 # brew 'youtube-dl' # fails
+brew 'yazi'
 brew 'zoxide'
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
