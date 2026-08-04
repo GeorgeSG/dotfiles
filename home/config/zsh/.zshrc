@@ -17,7 +17,13 @@ zstyle ':completion:*' completer _complete _ignored _correct _approximate
 zstyle :compinstall filename '~/.config/zsh/.zshrc'
 
 autoload -Uz compinit
-compinit
+# Full compinit (with compaudit security scan) at most once a day; -C skips it
+if [[ -n $ZDOTDIR/.zcompdump(#qN.mh+24) || ! -f $ZDOTDIR/.zcompdump ]]; then
+  compinit
+  touch $ZDOTDIR/.zcompdump
+else
+  compinit -C
+fi
 # End of lines added by compinstall
 
 # Load bashcompinit for some old bash completions
@@ -83,7 +89,12 @@ source "$ZDOTDIR/plugins/bd/bd.zsh"
 # Prompt
 source $ZDOTDIR/.zprompt
 
-eval $(thefuck --alias)
+# thefuck — lazy: `thefuck --alias` boots Python (~480ms), defer to first use
+fuck() {
+  unfunction fuck
+  eval "$(thefuck --alias)"
+  fuck "$@"
+}
 eval "$(zoxide init zsh --cmd cd)"
 
 
