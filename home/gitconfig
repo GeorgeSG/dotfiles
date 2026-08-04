@@ -89,3 +89,6 @@
 
     update-submodules = submodule update --init --recursive
 	upgrade-submodules = submodule update --init --remote
+
+    # Delete all local branches that have been removed from the remote.
+	gone = !git fetch --prune && git branch -vv | awk '/: gone]/ {print $1}' | xargs -r git branch -D
