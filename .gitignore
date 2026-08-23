@@ -12,3 +12,8 @@ __pycache__
 
 *.local
 *.log
+
+# Claude skills: ignore everything except the ones actually written here
+home/claude/skills/*
+!home/claude/skills/.gitkeep
+!home/claude/skills/commit-default
