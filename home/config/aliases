@@ -140,3 +140,17 @@ if [ "$(uname)" = "Darwin" ]; then
   alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
   alias scr="open -b com.apple.ScreenSaver.Engine"
 fi
+
+# Claude
+if type claude >/dev/null 2>&1; then
+  alias cc='claude'
+  alias ccc='claude --continue'
+  alias ccls='claude --resume'
+  alias ccy='claude --dangerously-skip-permissions'
+fi
+
+# Codex CLI
+if type codex >/dev/null 2>&1; then
+  alias cx='codex'
+  alias cxf='codex --full-auto'
+fi
