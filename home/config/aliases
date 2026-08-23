@@ -152,5 +152,6 @@ fi
 # Codex CLI
 if type codex >/dev/null 2>&1; then
   alias cx='codex'
+  alias cxls='codex resume'
   alias cxf='codex --full-auto'
 fi
