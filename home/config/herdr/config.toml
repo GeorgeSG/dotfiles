@@ -99,6 +99,9 @@ copy_mode = ["prefix+[", "prefix+esc"]
 
 [ui]
 
+# Desktop tab row placement: "top" or "bottom".
+tab_bar_position = "bottom"
+
 # Ask for a tab name before creating a new tab.
 prompt_new_tab_name = true
 
